@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dissertation Research Identity - Purdue D.Tech</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --gold:#CFB991;--gold-light:#e8d5a3;--gold-dim:rgba(207,185,145,0.12);
+  --gold-border:rgba(207,185,145,0.25);--gold-border-hover:rgba(207,185,145,0.5);
+  --bg:#0a0a0a;--card:#111111;--card2:#0d0d0d;
+  --text:#f0ece2;--text-sub:#ccc4b4;--text-dim:#9c9080;
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+.hero{background:#111;border-bottom:3px solid var(--gold);padding:1.5rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.logo{border-right:1px solid var(--gold-border);padding-right:1.4rem;flex-shrink:0;}
+.logo img,.logo svg{height:38px;width:auto;display:block;}
+.hero-t h1{font-size:1.25rem;font-weight:700;color:#fff;}
+.hero-t p{font-size:.78rem;color:var(--text-sub);margin-top:.25rem;}
+
+.body{max-width:860px;margin:0 auto;padding:2rem 1.5rem 3rem;}
+.section{margin-bottom:2rem;}
+.sec-hdr{padding-bottom:.55rem;border-bottom:1px solid rgba(207,185,145,.12);margin-bottom:1rem;}
+.sec-title{font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;}
+
+.topic-block{background:var(--card);border:1px solid var(--gold-border-hover);border-radius:12px;padding:1.5rem;margin-bottom:1.25rem;}
+.topic-label{font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;}
+.topic-title{font-size:1.1rem;font-weight:700;color:var(--gold-light);line-height:1.5;}
+
+.sentence-block{background:rgba(207,185,145,.06);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin-bottom:1.25rem;}
+.sentence-label{font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.sentence-text{font-size:.95rem;color:var(--text);line-height:1.8;font-style:italic;}
+
+.bullet-card{background:var(--card);border:1px solid var(--gold-border);border-radius:10px;overflow:hidden;margin-bottom:1rem;}
+.bullet-card-hdr{background:rgba(207,185,145,.06);border-bottom:1px solid var(--gold-border);padding:.75rem 1rem;font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.09em;text-transform:uppercase;}
+.bullet-list{padding:.85rem 1rem;display:flex;flex-direction:column;gap:.65rem;}
+.bullet-item{display:flex;align-items:flex-start;gap:.75rem;font-size:.89rem;color:var(--text-sub);line-height:1.65;}
+.bullet-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.45rem;}
+.bullet-item strong{color:var(--gold-light);}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+
+.table-wrap{background:var(--card);border:1px solid var(--gold-border);border-radius:10px;overflow:hidden;margin-bottom:1rem;}
+.table-hdr{background:rgba(207,185,145,.06);border-bottom:1px solid var(--gold-border);padding:.75rem 1rem;font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.09em;text-transform:uppercase;}
+table{width:100%;border-collapse:collapse;}
+thead tr{background:rgba(207,185,145,.04);}
+thead th{padding:.65rem 1rem;font-size:.68rem;font-weight:700;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;text-align:left;border-bottom:1px solid var(--gold-border);}
+tbody tr{border-bottom:1px solid rgba(207,185,145,.06);}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:rgba(207,185,145,.03);}
+tbody td{padding:.7rem 1rem;font-size:.88rem;line-height:1.65;}
+tbody td:first-child{color:var(--gold-light);font-weight:600;width:40%;}
+tbody td:last-child{color:var(--text-sub);}
+
+.three-circles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.circle-card{background:var(--card);border:1px solid var(--gold-border);border-radius:10px;padding:1rem;text-align:center;}
+.circle-num{width:36px;height:36px;border-radius:50%;background:var(--gold);color:#000;font-size:.82rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto .65rem;}
+.circle-label{font-size:.7rem;font-weight:700;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;}
+.circle-text{font-size:.78rem;color:var(--text-sub);line-height:1.6;}
+
+.real-world-card{background:var(--card);border:1px solid var(--gold-border);border-radius:10px;overflow:hidden;margin-bottom:.75rem;}
+.rw-hdr{background:rgba(207,185,145,.06);border-bottom:1px solid var(--gold-border);padding:.65rem 1rem;display:flex;align-items:center;gap:.65rem;}
+.rw-num{width:22px;height:22px;border-radius:50%;background:var(--gold);color:#000;font-size:.68rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rw-title{font-size:.8rem;font-weight:700;color:var(--gold-light);}
+.rw-body{padding:.8rem 1rem;font-size:.88rem;color:var(--text-sub);line-height:1.75;}
+
+.sector-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.sector-card{background:var(--card);border:1px solid var(--gold-border);border-radius:10px;overflow:hidden;}
+.sector-hdr{background:rgba(207,185,145,.06);border-bottom:1px solid var(--gold-border);padding:.65rem 1rem;font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;}
+.sector-list{padding:.8rem 1rem;display:flex;flex-direction:column;gap:.45rem;}
+.sector-item{display:flex;align-items:flex-start;gap:.6rem;font-size:.8rem;color:var(--text-sub);line-height:1.55;}
+.sector-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.42rem;opacity:.7;}
+
+.applicability-sentence{background:rgba(207,185,145,.06);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin-bottom:1.25rem;}
+.applicability-sentence p{font-size:.88rem;color:var(--text);line-height:1.8;font-style:italic;}
+
+.footer{text-align:center;padding:2rem 0 1rem;font-size:.7rem;color:var(--text-dim);}
+.footer strong{color:var(--gold);letter-spacing:.06em;text-transform:uppercase;}
+.core-arg{background:var(--card);border:1px solid var(--gold-border-hover);border-radius:12px;padding:1.5rem;margin-bottom:2rem;}
+.core-arg-label{font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem;}
+.core-arg-title{font-size:1rem;font-weight:700;color:var(--gold-light);line-height:1.5;margin-bottom:1rem;}
+.core-arg-body{font-size:.85rem;color:var(--text-sub);line-height:1.8;}
+.core-arg-body p{margin-bottom:.75rem;}
+.core-arg-body p:last-child{margin-bottom:0;}
+.core-pillars{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-top:1rem;}
+.pillar{display:none;}
+.audience-circles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:1.25rem;}
+.audience-circle{background:var(--card);border:1px solid var(--gold-border-hover);border-radius:50%;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5rem;position:relative;transition:border-color .2s;}
+.audience-circle:hover{border-color:var(--gold);}
+.audience-circle-icon{font-size:1.6rem;margin-bottom:.6rem;}
+.audience-circle-label{font-size:.7rem;font-weight:700;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;line-height:1.3;}
+.audience-circle-text{font-size:.72rem;color:var(--text-sub);line-height:1.55;}
+.audience-connector{display:flex;align-items:center;justify-content:center;margin-top:.75rem;gap:.5rem;}
+.connector-line{flex:1;height:1px;background:var(--gold-border);}
+.connector-label{font-size:.65rem;font-weight:700;color:var(--text-dim);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;padding:0 .5rem;}
+@media(max-width:700px){.core-pillars,.audience-circles{grid-template-columns:1fr;}.audience-circle{aspect-ratio:auto;border-radius:12px;}}
+
+/* ── AI Section Tabs ── */
+.tab-bar{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;}
+.tab-btn{background:transparent;border:1px solid var(--gold-border);color:var(--text-sub);font-family:'Inter',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.45rem .85rem;border-radius:6px;cursor:pointer;transition:all .2s;}
+.tab-btn:hover{border-color:var(--gold-border-hover);color:var(--gold);}
+.tab-btn.active{background:var(--gold);color:#000;border-color:var(--gold);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* ── Sentiment / Feeling Cards ── */
+.sentiment-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.sentiment-card{background:var(--card);border:1px solid var(--gold-border);border-radius:10px;overflow:hidden;}
+.sentiment-hdr{padding:.65rem 1rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.sentiment-hdr.pos{background:rgba(100,200,100,.08);color:#7ecb7e;border-bottom:1px solid rgba(100,200,100,.2);}
+.sentiment-hdr.neg{background:rgba(220,80,80,.08);color:#e07070;border-bottom:1px solid rgba(220,80,80,.2);}
+.sentiment-list{padding:.8rem 1rem;display:flex;flex-direction:column;gap:.45rem;}
+.sentiment-item{display:flex;align-items:flex-start;gap:.6rem;font-size:.86rem;color:var(--text-sub);line-height:1.55;}
+.s-dot-pos{width:5px;height:5px;border-radius:50%;background:#7ecb7e;flex-shrink:0;margin-top:.42rem;}
+.s-dot-neg{width:5px;height:5px;border-radius:50%;background:#e07070;flex-shrink:0;margin-top:.42rem;}
+
+/* ── Usage Examples Grid ── */
+.usage-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin-bottom:1rem;}
+.usage-card{background:var(--card);border:1px solid var(--gold-border);border-radius:10px;padding:1rem;}
+.usage-icon{font-size:1.4rem;margin-bottom:.5rem;}
+.usage-title{font-size:.75rem;font-weight:700;color:var(--gold-light);margin-bottom:.4rem;}
+.usage-desc{font-size:.83rem;color:var(--text-sub);line-height:1.6;}
+
+/* ── AI Interaction Pros/Cons ── */
+.proscon-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.proscon-card{background:var(--card);border-radius:10px;overflow:hidden;}
+.proscon-card.pros{border:1px solid rgba(100,200,100,.3);}
+.proscon-card.cons{border:1px solid rgba(220,80,80,.3);}
+.proscon-hdr{padding:.75rem 1rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.proscon-card.pros .proscon-hdr{background:rgba(100,200,100,.07);color:#7ecb7e;border-bottom:1px solid rgba(100,200,100,.15);}
+.proscon-card.cons .proscon-hdr{background:rgba(220,80,80,.07);color:#e07070;border-bottom:1px solid rgba(220,80,80,.15);}
+.proscon-list{padding:.85rem 1rem;display:flex;flex-direction:column;gap:.55rem;}
+.proscon-item{display:flex;align-items:flex-start;gap:.65rem;font-size:.86rem;color:var(--text-sub);line-height:1.6;}
+
+/* ── Chapter Draft Cards ── */
+.chapter-card{background:var(--card);border:1px solid var(--gold-border);border-radius:12px;overflow:hidden;margin-bottom:1rem;}
+.chapter-hdr{background:rgba(207,185,145,.06);border-bottom:1px solid var(--gold-border);padding:.9rem 1.25rem;display:flex;align-items:center;gap:1rem;}
+.chapter-num{width:32px;height:32px;border-radius:50%;background:var(--gold);color:#000;font-size:.78rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.chapter-meta{flex:1;}
+.chapter-title{font-size:.92rem;font-weight:700;color:var(--gold-light);line-height:1.4;}
+.chapter-sub{font-size:.68rem;color:var(--text-sub);margin-top:.2rem;letter-spacing:.04em;}
+.chapter-body{padding:1rem 1.25rem;}
+.chapter-purpose{font-size:.88rem;color:var(--text-sub);line-height:1.75;margin-bottom:.85rem;}
+.chapter-topics{display:flex;flex-direction:column;gap:.4rem;}
+.chapter-topic{display:flex;align-items:flex-start;gap:.65rem;font-size:.85rem;color:var(--text-sub);line-height:1.55;}
+.chapter-topic-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:.48rem;opacity:.7;}
+.chapter-topic strong{color:var(--gold-light);}
+.chapter-status-details{margin-top:.9rem;display:inline-block;}
+.chapter-status-details summary{font-size:.65rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;user-select:none;list-style:none;padding:.3rem .65rem;border-radius:4px;border:1px solid rgba(207,185,145,.15);display:inline-flex;align-items:center;gap:.4rem;transition:all .2s;}
+.chapter-status-details summary::-webkit-details-marker{display:none;}
+.chapter-status-details summary::after{content:"›";font-size:.8rem;transition:transform .2s;}
+.chapter-status-details[open] summary::after{transform:rotate(90deg);}
+.chapter-status-details summary:hover{border-color:var(--gold-border);color:var(--text-sub);}
+.chapter-status-text{display:block;margin-top:.45rem;font-size:.72rem;color:var(--text-sub);font-style:italic;padding:.35rem .65rem;background:rgba(207,185,145,.05);border-radius:4px;border:1px solid var(--gold-border);}
+
+
+/* ── Call to Action Grid ── */
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:.85rem;}
+.cta-item{background:rgba(207,185,145,.06);border:1px solid var(--gold-border);border-radius:8px;padding:.85rem 1rem;}
+.cta-label{font-size:.68rem;font-weight:700;color:var(--gold);letter-spacing:.09em;text-transform:uppercase;margin-bottom:.4rem;}
+.cta-text{font-size:.85rem;color:var(--text-sub);line-height:1.6;}
+
+/* ── Responsive ── */
+@media(max-width:700px){
+  .hero{padding:1rem 1.25rem;gap:1rem;}
+  .body{padding:1.25rem 1rem 2.5rem;}
+  .two-col,.sector-grid,.sentiment-grid,.proscon-grid,.three-circles,.usage-grid,.cta-grid{grid-template-columns:1fr;}
+  .hero-t h1{font-size:1.05rem;}
+  table{font-size:.75rem;}
+  thead th,tbody td{padding:.5rem .75rem;}
+}
+@media print{
+  body{background:#fff;color:#000;}
+  .hero{background:#000;}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo">
+    <svg height="38" width="auto" id="b9574715-f51d-4cc5-89a8-cfc777c68231" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 45"><defs><style>.fa98ca42-c8fb-4c5a-83d6-9e8d74839fab{fill:#9d9795;}.e0b3e770-917e-4be0-9440-1b1b7110c409{fill:#cfb991;}</style></defs><title>PU-H-Full-RGB</title><path fill="#cfb991" d="M96.65782,3.858,93.8859,3.05088V1.05074h10.82847c7.05206,0,9.65607,2.25347,9.65607,7.57934,0,4.98121-2.84557,7.5646-8.41886,7.5646h-4.3803v7.977l2.80727.80713v1.8617H93.81521v-1.8617l2.84261-.80713Zm4.91346-.08837v9.96242l5.158-.38294c1.28139-.58914,2.604-1.36387,2.604-4.58059,0-2.43022-.11489-5.00773-4.831-5.00773Z"/><path fill="#cfb991" d="M154.60308,15.85887h-3.49362v8.31282l2.80433.80713v1.8617h-10.5663v-1.8617l2.84261-.80713V3.84623l-2.80727-.80713V1.05074H154.6885c6.70151,0,9.13173,2.37719,9.13173,6.946,0,3.53486-1.37859,5.37-4.56,6.63376l4.78092,9.332,3.08416,1.01627v1.8617h-7.17872ZM151.10946,3.78731v9.824l5.21981-.35054c1.65844-.82186,2.45674-2.13565,2.45674-4.84277,0-2.83967-.91907-4.63067-3.86479-4.63067Z"/><path fill="#cfb991" d="M169.22859,24.97882l2.79548-.77178V3.858l-2.77191-.80713V1.05074H181.745c7.05205,0,11.16722,4.25067,11.16722,12.61357,0,9.45871-4.26835,13.17621-11.70629,13.17621H169.22859Zm7.75608-21.19151V24.17169h3.691c2.53626,0,6.90477-.40945,6.90477-9.72087,0-7.3319-1.31673-10.66646-6.90477-10.66646Z"/><path fill="#cfb991" d="M104.7291,40.276c0,3.13424-1.81457,4.286-4.78385,4.286s-4.78385-1.76743-4.78385-4.286V33.98978l-1.34619-.42124V32.39025h5.49671v1.17829l-1.32852.42124V40.276c0,1.62014.62154,2.50386,2.389,2.50386.86605,0,2.33007-.271,2.33007-2.58634V33.98978l-1.3462-.42124V32.39025h4.71315v1.17829l-1.34619.42124Z"/><path fill="#cfb991" d="M114.20843,37.0386v5.76772l1.32852.40651v1.17829h-4.63657V43.21283l1.36092-.40651V34.62311l-.58914-.72759-.80418-.25039V32.38436h3.037l5.85315,7.36431V33.98978l-1.34619-.40356V32.38436h4.63656v1.20186l-1.34325.40356V44.4h-1.573Z"/><path fill="#cfb991" d="M133.06987,42.80632l1.3462.40651v1.17829h-5.5144V43.21283l1.3462-.40651V33.96916l-1.3462-.40651V32.38436h5.51439v1.17829l-1.34619.40651Z"/><path fill="#cfb991" d="M207.31085,42.80632l1.34619.40651v1.17829h-5.51143V43.21283l1.34325-.40651V33.96916l-1.34325-.40651V32.38436h5.51145v1.17829l-1.3462.40651Z"/><path fill="#cfb991" d="M147.02964,44.38523h-2.59223l-3.81177-10.39545-1.34619-.42124V32.39025h5.806v1.17829l-1.36387.42124,2.53037,7.39376,2.57751-7.39376-1.3462-.42124V32.39025h4.71314v1.17829l-1.34619.42124Z"/><path fill="#cfb991" d="M157.94648,33.98978l-1.34619-.40356V32.38436h9.4263l.106,3.69688h-1.50526l-.73053-2.115h-3.12837V37.3479h3.11363v1.70263h-3.11363V42.8564h3.19317l.95736-2.10325h1.47286l-.21209,3.64386h-9.57948V43.21872l1.34619-.33581Z"/><path fill="#cfb991" d="M177.65039,39.48649h-1.02216v3.31983l1.3462.40651v1.17829H172.463V43.21283l1.3462-.40651V33.98978l-1.3462-.40356V32.38436h5.479c3.35813,0,4.395,1.29906,4.395,3.32572a2.877,2.877,0,0,1-1.94123,3.14014l1.9383,3.91191,1.68495.51845v1.10464H179.954Zm-1.02216-5.49671v4.20059l1.89705-.162a2.51565,2.51565,0,0,0,.94263-2.09146c0-1.20186-.31814-1.94712-1.54945-1.94712Z"/><path fill="#cfb991" d="M188.89127,40.65594h1.66727l.35644,1.685a4.84866,4.84866,0,0,0,2.53331.69813,2.86335,2.86335,0,0,0,.38884-.01767,1.80869,1.80869,0,0,0,.74527-1.4434c0-2.80433-5.7412-1.55534-5.7412-5.65873,0-1.87937,1.7203-3.67921,4.57471-3.67921a7.485,7.485,0,0,1,3.258.82481v3.1637h-1.573l-.56852-2.01193a5.50863,5.50863,0,0,0-1.94417-.38884,1.97346,1.97346,0,0,0-.324.01768,1.65257,1.65257,0,0,0-.79535,1.411c0,2.39781,5.69113,1.53766,5.69113,5.56152,0,2.171-1.96184,3.72928-4.60416,3.72928a6.80747,6.80747,0,0,1-3.64975-1.087Z"/><path fill="#cfb991" d="M218.17761,34.01924h-1.55533l-.707,2.12681H214.41V32.38436h10.45731v3.76169h-1.47286l-.704-2.12681h-1.68789V42.8181l1.34619.40651V44.4029h-5.5144V43.22461l1.34325-.40651Z"/><path fill="#cfb991" d="M234.26713,39.76339l-3.146-5.77361-1.3462-.42124V32.39025h5.806v1.17829l-1.36092.42124,1.97658,3.909,1.99426-3.909-1.34619-.42124V32.39025h4.73672v1.17829l-1.3462.42124-3.1637,5.74121v3.07533l1.3462.40651v1.17829h-5.51147V43.21283l1.36092-.40651Z"/><polygon fill="#cfb991" points="239.343 19.367 237.516 24.175 229.442 24.175 229.442 14.896 234.017 14.896 234.606 17.494 236.638 17.494 236.638 9.679 234.606 9.679 234.017 12.186 229.442 12.186 229.442 3.787 237.166 3.787 238.639 8.769 241.419 8.769 241.246 1.051 221.721 1.051 221.721 3.051 224.493 3.858 224.493 24.207 221.686 24.979 221.686 26.841 241.628 26.841 242.085 19.367 239.343 19.367"/><path fill="#cfb991" d="M138.36333,17.97095c0,6.54245-3.12246,9.25546-9.52645,9.25546-5.89144,0-10.15685-2.35658-10.15685-8.57205V3.858l-2.80727-.80713V1.05074h10.528V3.05088l-2.80727.80713V18.65436c0,3.72045,1.71735,5.35238,5.82368,5.35238,2.83379,0,5.4378-1.65844,5.4378-5.69408V3.858L132.083,3.05088V1.05074h9.08755V3.05088l-2.80728.80713Z"/><path fill="#cfb991" d="M216.7018,17.97095c0,6.54245-3.12245,9.25546-9.52351,9.25546-5.89144,0-10.15979-2.35658-10.15979-8.57205V3.858l-2.80728-.80713V1.05074h10.528V3.05088l-2.80728.80713V18.65436c0,3.72045,1.72031,5.35238,5.8237,5.35238,2.83378,0,5.4378-1.65844,5.4378-5.69408V3.858l-2.77191-.80713V1.05074h9.08755V3.05088L216.7018,3.858Z"/><path fill="#cfb991" d="M44.17982,44.40879l5.55858-13.0407h9.19948c13.31466,0,18.36657-5.46726,21.86019-13.677,1.29317-3.037,3.45827-8.1243.58914-12.45156S72.51471.438,68.21985.438h-48.899L12.425,16.63949h8.85189l-4.92524,11.5649H7.482L.58317,44.40879Z"/><path class="fa98ca42-c8fb-4c5a-83d6-9e8d74839fab" d="M78.89219,6.89505c-1.55534-2.35658-4.94881-3.45239-10.67234-3.45239H21.30925L16.97315,13.629h8.83716L18.337,31.209H9.46746L5.12841,41.4071H42.2003L46.5364,31.209H37.549l1.21364-2.84851H58.93788c12.97885,0,16.44007-5.59687,19.0971-11.84474,1.42868-3.364,2.67177-6.87531.85721-9.62072M45.03408,13.629h14.817c2.04433,0,1.74976,1.02511,1.47286,1.66139a4.99484,4.99484,0,0,1-4.74555,2.88091H43.10169Z"/><path class="e0b3e770-917e-4be0-9440-1b1b7110c409" d="M68.21985,5.00684H22.34026l-3.00758,7.06973h8.85188L19.371,32.77025H10.50141L7.49088,39.84H41.1693l3.01052-7.06973H35.18654l2.5451-5.97392H58.94083c12.157,0,15.21464-5.14911,17.67431-10.89916S80.3945,4.998,68.23751,4.998M56.60486,19.72661h-15.848l3.26386-7.65888h15.848c2.80433,0,3.93549,1.44046,2.91921,3.82944a6.48381,6.48381,0,0,1-6.186,3.82944"/><path fill="#cfb991" d="M244.84522,44.34988a2.57162,2.57162,0,1,1,2.57161-2.57162h0A2.57456,2.57456,0,0,1,244.84522,44.34988Zm0-4.61005a2.03844,2.03844,0,1,0,2.03844,2.03844h0a2.03845,2.03845,0,0,0-2.03844-2.03845Z"/><path fill="#cfb991" d="M244.51824,42.01392v.95442h-.50373v-2.386h1.06342c.51845,0,.80123.29457.80123.654a.58914.58914,0,0,1-.3476.56558c.11784.04418.29458.165.29458.58914v.11783a1.76663,1.76663,0,0,0,.03534.45364h-.489a1.6939,1.6939,0,0,1-.05007-.53612V42.391c0-.25923-.0648-.383-.44776-.383Zm0-.4124h.433c.29457,0,.39178-.109.39178-.29457s-.12666-.29457-.38-.29457h-.4448Z"/></svg>
+  </div>
+  <div class="hero-t">
+    <h1>Dissertation Research Identity</h1>
+    <p>Doctor of Technology - Interdisciplinary Concentration</p>
+  </div>
+</div>
+
+<style>
+#overlap-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:rgba(0,0,0,0.75);align-items:center;justify-content:center;padding:1.5rem;}
+#overlap-modal.open{display:flex;}
+#overlap-modal-box{background:#111;border:1px solid rgba(207,185,145,0.45);border-radius:14px;padding:1.75rem 2rem;max-width:560px;width:100%;position:relative;max-height:80vh;overflow-y:auto;}
+#overlap-modal-title{font-size:.78rem;font-weight:700;color:#CFB991;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem;}
+#overlap-modal-body{font-size:.93rem;color:#ccc4b4;line-height:1.85;text-align:justify;}
+#overlap-modal-close{position:absolute;top:1rem;right:1.25rem;background:transparent;border:1px solid rgba(207,185,145,0.3);color:rgba(207,185,145,0.7);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:.9rem;font-family:Inter,sans-serif;display:flex;align-items:center;justify-content:center;}
+#overlap-modal-close:hover{background:rgba(207,185,145,0.1);color:#CFB991;}
+</style>
+<script>
+function showOverlapInfo(panelId, title, body) {
+  document.getElementById('overlap-modal-title').textContent = title;
+  document.getElementById('overlap-modal-body').textContent = body;
+  document.getElementById('overlap-modal').classList.add('open');
+}
+function closeOverlapModal() {
+  document.getElementById('overlap-modal').classList.remove('open');
+}
+</script>
+
+<div class="body">
+
+  <!-- Core Argument Framing -->
+  <div class="section">
+    <div class="core-arg">
+      <div class="core-arg-label">The Case for This Research</div>
+      <div class="core-arg-title">HCI, AI, and Cybersecurity Are Inseparable, and Organizations Cannot Afford to Treat Them as If They Are Not</div>
+      <div class="core-arg-body">
+        <p>Human-computer interaction, artificial intelligence, and cybersecurity are not three separate fields that happen to overlap. They are three dimensions of the same experience. Every time a person interacts with an AI-powered system, they are simultaneously navigating an interface shaped by HCI principles, making decisions with security consequences, and engaging with technology that is learning from and about them. These three things are happening at once, in every interaction, for every user.</p>
+        <p>Organizations that build or deploy AI-powered technology, whether they are developing their own AI products, integrating third-party AI tools into their services, or using AI internally, are making decisions that sit at the intersection of all three. When they treat HCI, AI, and cybersecurity as separate concerns to be handled by separate teams at separate stages of development, the result is systems with gaps. Those gaps are where users get confused, where security fails, where trust erodes, and where the people least equipped to protect themselves get hurt most.</p>
+        <p>This is not a theoretical concern. AI companies are in the news for lawsuits. Governments are passing emergency legislation. Vulnerable populations, elderly users, people with disabilities, children and teenagers, those with mental health conditions, low-literacy users, and others, are bearing consequences that organizations did not anticipate because they did not study them. Society as a whole is navigating an AI landscape that is moving faster than the guidance available to the people building it.</p>
+        <p>This research applies existing knowledge across HCI, AI, and cybersecurity to address that gap. Its audience is broad: businesses and organizations of every size, from startups to established enterprises, that are building or deploying AI-powered technology; technology and cybersecurity professionals navigating these intersections daily; policymakers setting the rules that govern them; and society as a whole, which is already living inside the systems these decisions produce. Vulnerable populations are a critical focus of this research because they are where the consequences of getting the intersection wrong are most severe and least studied. But the research does not stop there. Every organization operating at this intersection needs to understand it, because it affects their daily operations, their external products, their internal tools, their legal obligations, and the people they serve, whether those people are considered vulnerable or not.</p>
+        <p>What makes this research both urgent and necessarily forward-looking is the pace at which this landscape continues to change. AI capabilities that were experimental two years ago are now embedded in consumer products used by billions. Regulatory frameworks enacted last year are already struggling to keep pace with what organizations are building and deploying today. New threat vectors are emerging faster than protective guidance can address them. The digital society this dissertation examines is not a fixed state - it is an evolving one, and the organizations, professionals, and populations navigating it are doing so in real time, without the benefit of fully settled answers. Any framework built for this landscape must account for that reality, offering not just guidance for the current moment but a foundation for continued understanding as the technology, the risks, and the policy environment all continue to evolve. That is the orientation of this research: applied and grounded in what is known today, and structured to remain relevant as what is known continues to grow.</p>
+      </div>
+      <div style="margin-top:1.25rem;position:relative;">
+        <svg viewBox="0 0 780 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;margin:0 auto;">
+          <defs>
+            <filter id="glow2"><feGaussianBlur stdDeviation="2.5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+
+          <!-- HCI circle -->
+          <g class="venn-circle-group" onclick="openVennCard('vc-hci')">
+            <circle cx="215" cy="220" r="210" fill="rgba(168,85,247,0.15)" stroke="rgba(168,85,247,0.6)" stroke-width="1.5"/>
+            <text x="120" y="110" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" font-weight="800" fill="rgba(168,85,247,1)">HCI</text>
+            <text x="120" y="130" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="rgba(168,85,247,0.8)">Human-Computer Interaction</text>
+            <text x="120" y="148" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.3)" font-style="italic">click to explore</text>
+          </g>
+
+          <!-- AI circle -->
+          <g class="venn-circle-group" onclick="openVennCard('vc-ai')">
+            <circle cx="565" cy="220" r="210" fill="rgba(207,185,145,0.15)" stroke="rgba(207,185,145,0.6)" stroke-width="1.5"/>
+            <text x="660" y="110" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" font-weight="800" fill="rgba(207,185,145,1)">AI</text>
+            <text x="660" y="130" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="rgba(207,185,145,0.8)">Artificial Intelligence</text>
+            <text x="660" y="148" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.3)" font-style="italic">click to explore</text>
+          </g>
+
+          <!-- Cybersecurity circle -->
+          <g class="venn-circle-group" onclick="openVennCard('vc-cyber')">
+            <circle cx="390" cy="398" r="210" fill="rgba(192,132,252,0.15)" stroke="rgba(192,132,252,0.6)" stroke-width="1.5"/>
+            <text x="390" y="548" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="rgba(192,132,252,0.95)" letter-spacing="1.5">CYBERSECURITY</text>
+            <text x="390" y="565" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(255,255,255,0.3)" font-style="italic">click to explore</text>
+          </g>
+
+          <!-- Clickable overlap labels -->
+          <g class="venn-circle-group" pointer-events="all" onclick="showOverlapInfo('hci-info','AI-Powered UX Design','Where HCI and AI meet: how artificial intelligence is changing the interfaces people use every day, and why applying human-centered design principles to AI-powered tools is critical. AI does not just power interfaces; it changes what good UX design must account for, including opacity, trust, explainability, and the cognitive experience of interacting with systems that learn and make decisions.')">
+            <rect x="280" y="178" width="220" height="44" fill="rgba(0,0,0,0.001)" pointer-events="all" style="cursor:pointer;"/>
+            <text x="390" y="192" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(240,236,226,0.8)" text-decoration="underline" style="cursor:pointer;">AI-Powered UX Design</text>
+            <text x="390" y="203" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)" font-style="italic">tap for more</text>
+          </g>
+          <g class="venn-circle-group" pointer-events="all" onclick="showOverlapInfo('hci-info','Security Usability','Where HCI and Cybersecurity meet: security that is not usable is not secure. If users cannot understand a security warning, they will dismiss it. If authentication is too complex, they will find workarounds. If consent language is inaccessible, they cannot make informed decisions. Human-centered design is not in tension with cybersecurity; it is the mechanism through which cybersecurity actually works for real people.')">
+            <rect x="165" y="344" width="180" height="40" fill="rgba(0,0,0,0.001)" pointer-events="all" style="cursor:pointer;"/>
+            <text x="255" y="357" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(240,236,226,0.8)" text-decoration="underline" style="cursor:pointer;">Security Usability</text>
+            <text x="255" y="368" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)" font-style="italic">tap for more</text>
+          </g>
+          <g class="venn-circle-group" pointer-events="all" onclick="showOverlapInfo('hci-info','AI Threats and Defenses','Where AI and Cybersecurity meet: AI is both a security tool and a security threat. On the defense side, AI powers threat detection, anomaly identification, and automated response. On the offense side, AI enables more convincing phishing, deepfakes, voice cloning, and social engineering at a scale and quality that was previously impossible. Understanding this dual role is essential to understanding the risk landscape this research examines.')">
+            <rect x="420" y="344" width="210" height="40" fill="rgba(0,0,0,0.001)" pointer-events="all" style="cursor:pointer;"/>
+            <text x="525" y="357" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(240,236,226,0.8)" text-decoration="underline" style="cursor:pointer;">AI Threats and Defenses</text>
+            <text x="525" y="368" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)" font-style="italic">tap for more</text>
+          </g>
+          <g class="venn-circle-group" pointer-events="all" onclick="showOverlapInfo('hci-info','This Research: Where All Three Intersect','People interact every day with technologies that are or may be AI-powered, and at every one of those interactions there are HCI, AI, and cybersecurity dimensions operating simultaneously, whether the person is aware of them or not. When those intersections are not understood or designed for, things go wrong in ways that affect real people. This is where this research lives: examining what happens across that intersection, who is most affected when it fails, and what organizations, governments, NGOs, and businesses need to understand in order to build, deploy, and implement AI and AI-powered technologies in ways that are responsible, secure, and human-centered.')">
+            <rect x="280" y="258" width="220" height="50" fill="rgba(0,0,0,0.001)" pointer-events="all" style="cursor:pointer;"/>
+            <text x="390" y="275" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="#e8d5a3" filter="url(#glow2)" style="cursor:pointer;" text-decoration="underline">THIS RESEARCH</text>
+            <text x="390" y="289" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,215,100,0.4)" font-style="italic">tap for more</text>
+          </g>
+        </svg>
+
+        <!-- HCI Card -->
+        <div id="vc-hci" class="venn-card" style="background:rgba(25,10,45,0.97);border:1px solid rgba(168,85,247,0.5);">
+          <button class="venn-card-close" onclick="closeVennCard('vc-hci')">x</button>
+          <div class="venn-card-title" style="color:rgba(168,85,247,1);">HCI: Human-Computer Interaction</div>
+          <div class="venn-card-body">Human-computer interaction is the discipline that studies and designs how people engage with technology. It draws on psychology, design, cognitive science, and engineering to understand not just what users do, but why they do it, how they make decisions, where they struggle, and what kinds of interfaces and systems make technology more understandable, usable, and trustworthy. In the context of this research, HCI is the lens through which AI and cybersecurity must be examined, because both depend entirely on human behavior to succeed or fail. A security system that users cannot understand will not be used correctly. An AI system that users cannot trust will not be adopted responsibly. HCI is not a layer added on top of technology design. It is the foundation from which all of this research proceeds.</div>
+        </div>
+
+        <!-- AI Card -->
+        <div id="vc-ai" class="venn-card" style="background:rgba(35,28,10,0.97);border:1px solid rgba(207,185,145,0.5);">
+          <button class="venn-card-close" onclick="closeVennCard('vc-ai')">x</button>
+          <div class="venn-card-title" style="color:rgba(207,185,145,1);">AI: Artificial Intelligence</div>
+          <div class="venn-card-body">Artificial intelligence refers to computer systems designed to perform tasks that typically require human intelligence, by learning from data rather than following rigid hand-written rules. In this research, AI is examined as a technology that changes, complicates, and amplifies the human-technology relationship in ways no prior technology has. It is a tool that can improve accessibility, automate decisions, and extend the reach of services. It is also a threat vector, being actively used to generate synthetic imagery, clone voices, impersonate trusted individuals, and scale social engineering attacks in ways that were previously impossible. And it is infrastructure, now embedded in the platforms, services, and systems that billions of people interact with daily, often without knowing it. Understanding AI as all three of these things simultaneously is central to the applied research this dissertation pursues.</div>
+        </div>
+
+        <!-- Cybersecurity Card -->
+        <div id="vc-cyber" class="venn-card" style="background:rgba(20,10,35,0.97);border:1px solid rgba(192,132,252,0.5);">
+          <button class="venn-card-close" onclick="closeVennCard('vc-cyber')">x</button>
+          <div class="venn-card-title" style="color:rgba(192,132,252,1);">Cybersecurity</div>
+          <div class="venn-card-body">Cybersecurity is the practice of protecting systems, networks, and data from digital attacks, unauthorized access, and harm. In the context of this research, cybersecurity is understood as a fundamentally human discipline, not merely a technical one. The majority of security incidents involve a human element: someone clicking a phishing link, ignoring a warning, using a weak password, or failing to respond to an alert in time. AI is reshaping this landscape, making threats more sophisticated and more personalized, while also making security systems more complex and harder for everyday users to navigate. The intersection of cybersecurity with HCI and AI is where this research lives: examining how human experience, design decisions, and AI-powered systems interact to either protect or expose the people who depend on them.</div>
+
+        </div>
+      </div>
+      <div class="audience-connector">
+        <div class="connector-line"></div>
+        <div class="connector-label">This intersection affects</div>
+        <div class="connector-line"></div>
+      </div>
+
+      <!-- Audience Venn Diagram -->
+      <style>
+        .venn-wrapper{position:relative;}
+        .venn-card{display:none;position:absolute;top:0;left:0;right:0;bottom:0;border-radius:12px;padding:2rem 2.5rem;flex-direction:column;justify-content:center;animation:vfadeIn .25s ease;}
+        .venn-card.active{display:flex;}
+        @keyframes vfadeIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+        .venn-card-close{position:absolute;top:1rem;right:1.25rem;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;font-family:Inter,sans-serif;}
+        .venn-card-close:hover{background:rgba(255,255,255,.1);}
+        .venn-card-title{font-size:1.15rem;font-weight:800;margin-bottom:1rem;line-height:1.4;}
+        .venn-card-body{font-size:.9rem;line-height:1.85;text-align:justify;color:rgba(240,236,226,.85);}
+        .venn-circle-group{cursor:pointer;transition:opacity .2s;}
+        .venn-circle-group:hover circle{opacity:.85;stroke-width:2.5;}.venn-circle-group:hover text{opacity:1;}.venn-circle-group:hover rect{fill:rgba(255,255,255,0.04) !important;}
+        .venn-hint{font-size:8.5px;fill:rgba(255,255,255,.35);font-style:italic;}
+      </style>
+
+      <div class="venn-wrapper">
+        <svg viewBox="0 0 780 720" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;margin:.5rem auto 0;">
+
+          <!-- Society -->
+          <g class="venn-circle-group" onclick="openVennCard('vc-society')">
+            <circle cx="215" cy="230" r="215" fill="rgba(45,180,160,0.14)" stroke="rgba(45,210,180,0.55)" stroke-width="1.5"/>
+            <text x="148" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="rgba(45,210,180,0.95)">Society &amp;</text>
+            <text x="148" y="135" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="rgba(45,210,180,0.95)">General Population</text>
+            <text class="venn-hint" x="148" y="154" text-anchor="middle" font-family="Inter,sans-serif">click to explore</text>
+          </g>
+
+          <!-- Organizations -->
+          <g class="venn-circle-group" onclick="openVennCard('vc-orgs')">
+            <circle cx="565" cy="230" r="215" fill="rgba(245,158,11,0.14)" stroke="rgba(251,191,36,0.55)" stroke-width="1.5"/>
+            <text x="640" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="rgba(251,191,36,0.95)">Organizations</text>
+            <text x="640" y="135" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="rgba(251,191,36,0.95)">of Every Kind</text>
+            <text class="venn-hint" x="640" y="154" text-anchor="middle" font-family="Inter,sans-serif">click to explore</text>
+          </g>
+
+          <!-- Vulnerable Populations -->
+          <g class="venn-circle-group" onclick="openVennCard('vc-vp')">
+            <circle cx="390" cy="480" r="215" fill="rgba(244,63,94,0.14)" stroke="rgba(255,100,120,0.55)" stroke-width="1.5"/>
+            <text x="390" y="648" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="800" fill="rgba(255,100,120,0.95)">Vulnerable Populations</text>
+            <text x="390" y="664" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="800" fill="rgba(255,100,120,0.95)">, Critical Focus</text>
+            <text class="venn-hint" x="390" y="680" text-anchor="middle" font-family="Inter,sans-serif">click to explore</text>
+          </g>
+
+          <!-- Clickable Overlap Labels -->
+          <g class="venn-circle-group" pointer-events="all" onclick="showOverlapInfo('aud-info','Shared Digital Ecosystem','Society and organizations are not separate. They share the same digital infrastructure, the same platforms, and the same AI-powered systems. When organizations build or deploy technology without understanding its full human impact, society is the environment in which those consequences play out. And when society loses trust in technology, organizations bear the reputational, legal, and commercial cost. Their fates at this intersection are interconnected.')">
+            <rect x="260" y="196" width="260" height="42" fill="rgba(0,0,0,0.001)" pointer-events="all" style="cursor:pointer;"/>
+            <text x="390" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(240,236,226,0.85)" text-decoration="underline" style="cursor:pointer;">Shared digital ecosystem</text>
+            <text x="390" y="223" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)" font-style="italic">tap for more</text>
+          </g>
+          <g class="venn-circle-group" pointer-events="all" onclick="showOverlapInfo('aud-info','At-Risk Community Members','Vulnerable populations are part of the broader society, not separate from it. They are neighbors, family members, employees, and citizens who use the same platforms and systems as everyone else, often with less capacity to protect themselves when those systems fail. Recognizing that vulnerable populations exist within the general population rather than apart from it is essential to understanding why this research speaks to society as a whole.')">
+            <rect x="162" y="394" width="200" height="42" fill="rgba(0,0,0,0.001)" pointer-events="all" style="cursor:pointer;"/>
+            <text x="262" y="408" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(240,236,226,0.85)" text-decoration="underline" style="cursor:pointer;">At-risk community</text>
+            <text x="262" y="421" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)" font-style="italic">tap for more</text>
+          </g>
+          <g class="venn-circle-group" pointer-events="all" onclick="showOverlapInfo('aud-info','Populations Organizations Serve and Are Liable To','Organizations do not operate in isolation from vulnerable populations. They build the healthcare portals, the banking apps, the government services, the social media platforms, and the AI tools that vulnerable populations depend on. When those systems fail to account for the full range of human experience, organizations are not bystanders. They are the designers of the failure. This intersection is where organizational responsibility becomes most concrete and most measurable.')">
+            <rect x="408" y="394" width="220" height="42" fill="rgba(0,0,0,0.001)" pointer-events="all" style="cursor:pointer;"/>
+            <text x="518" y="408" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="rgba(240,236,226,0.85)" text-decoration="underline" style="cursor:pointer;">Populations they serve</text>
+            <text x="518" y="421" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)" font-style="italic">tap for more</text>
+          </g>
+          <g class="venn-circle-group" pointer-events="all" onclick="showOverlapInfo('aud-info','HCI + AI + Cybersecurity: The Shared Intersection','This is the point where all three audiences converge. Society, organizations of every kind, and vulnerable populations are all affected by the intersection of human-computer interaction, artificial intelligence, and cybersecurity, whether or not they are aware of it. The way this intersection is designed, governed, and understood determines the safety, equity, and trustworthiness of the technology landscape all three inhabit. This is what this research exists to address.')">
+            <rect x="240" y="284" width="300" height="60" fill="rgba(0,0,0,0.001)" pointer-events="all" style="cursor:pointer;"/>
+            <text x="390" y="302" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#e8d5a3" style="cursor:pointer;" text-decoration="underline">HCI + AI + Cybersecurity</text>
+            <text x="390" y="317" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#e8d5a3" style="cursor:pointer;">affects all three</text>
+            <text x="390" y="330" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="rgba(255,215,100,0.4)" font-style="italic">tap for more</text>
+          </g>
+        </svg>
+
+        <!-- Expandable Cards -->
+        <div id="vc-society" class="venn-card" style="background:rgba(20,50,45,0.97);border:1px solid rgba(45,210,180,0.4);">
+          <button class="venn-card-close" onclick="closeVennCard('vc-society')">×</button>
+          <div class="venn-card-title" style="color:rgba(45,210,180,0.95);">Society &amp; General Population</div>
+          <div class="venn-card-body">Everyone using AI-powered technology daily, banking, healthcare, social media, government services, multimedia platforms, workplace automation, entertainment, is living at this intersection, whether they know it or not. Every time a person encounters an AI-powered system, three things are happening simultaneously: they are navigating an interface shaped by HCI principles, making decisions with security consequences, and engaging with technology that is learning from them. Trust at a societal level is formed and eroded through these individual interactions. When systems are designed without the full range of human experience in mind, society as a whole bears the cost. Understanding this intersection is not a specialist concern. It is a civic one, and this research speaks to it as such.</div>
+        </div>
+
+        <div id="vc-orgs" class="venn-card" style="background:rgba(45,35,10,0.97);border:1px solid rgba(251,191,36,0.4);">
+          <button class="venn-card-close" onclick="closeVennCard('vc-orgs')">×</button>
+          <div class="venn-card-title" style="color:rgba(251,191,36,0.95);">Organizations of Every Kind</div>
+          <div class="venn-card-body">From AI startups to global enterprises, NGOs to government agencies, any organization building, deploying, or using AI-powered technology is operating at the intersection of HCI, AI, and cybersecurity, whether they recognize it or not. This includes startups and AI companies building products from scratch, whose foundational design and security decisions will shape every user interaction the company ever has. It includes established businesses integrating AI into existing products, services, and internal operations. It includes large enterprises and AI companies whose reach means that getting this intersection wrong has consequences at scale, as documented cases of lawsuits and regulatory action make clear. And it includes NGOs and government agencies whose obligation to the people they serve is highest precisely where those people are most vulnerable. The intersection affects their daily workflows, their compliance obligations, their products, and the experience of every person who touches what they build.</div>
+        </div>
+
+        <div id="vc-vp" class="venn-card" style="background:rgba(50,12,22,0.97);border:1px solid rgba(255,100,120,0.4);">
+          <button class="venn-card-close" onclick="closeVennCard('vc-vp')">×</button>
+          <div class="venn-card-title" style="color:rgba(255,100,120,0.95);">Vulnerable Populations: Critical Focus</div>
+          <div class="venn-card-body">Elderly users, people with disabilities, children and teenagers, those with mental health conditions, low-literacy users, and others whose needs fall outside the assumptions embedded in most technology design. These are the people where the consequences of getting this intersection wrong are most severe and least studied. They are not the only people affected by how organizations navigate HCI, AI, and cybersecurity. But they are the people most severely affected when it goes wrong, and the least represented in the research and design processes that shape these systems. Designing with them in mind produces systems that work better for everyone. That is what makes their inclusion in this research strategically necessary, not just morally right. Vulnerable populations are also not a single category, they are intersecting identities. A person can be elderly and have a disability. A teenager can have ADHD and low digital literacy. These intersections compound risk in ways that no single intervention can address, and that existing research has not fully examined.</div>
+        </div>
+      </div>
+
+      <script>
+        function openVennCard(id) {
+          document.querySelectorAll('.venn-card').forEach(c => c.classList.remove('active'));
+          document.getElementById(id).classList.add('active');
+        }
+        function closeVennCard(id) {
+          document.getElementById(id).classList.remove('active');
+        }
+      </script>
+
+
+
+            <!-- Bridge sentence -->
+      <div style="margin-top:1rem;background:rgba(207,185,145,.06);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:.9rem 1.1rem;">
+        <div style="font-size:.65rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;">Where Vulnerable Populations Fit Within This Picture</div>
+        <div style="font-size:.82rem;color:var(--text-sub);line-height:1.75;font-style:italic;">Vulnerable populations are not the only people affected by how organizations navigate the intersection of HCI, AI, and cybersecurity, but they are the people most severely affected when it goes wrong, and the least represented in the research and design processes that shape these systems. Designing with them in mind produces systems that work better for everyone. That is what makes their inclusion in this research strategically necessary, not just morally right.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Research Topic -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-title">Research Topic</span></div>
+    <div class="topic-block">
+      <div class="topic-label">Final Dissertation Title</div>
+      <div class="topic-title">Human-Computer Interaction, AI, and Cybersecurity: An Applied Integrated Framework for Risk, Trust, and Responsible Technology in an Evolving Digital Society</div>
+    </div>
+    <div class="sentence-block">
+      <div class="sentence-label">Research Identity Statement</div>
+      <div class="sentence-text">"I research the intersection of human-computer interaction, AI, and cybersecurity as an integrated and inseparable whole, examining how this intersection affects people, organizations, and society at large. This research carries two interconnected focuses: the organizations, businesses, NGOs, and government agencies of every size, that build, deploy, and implement AI-powered technology, and who must understand this intersection to operate responsibly, protect the people they serve, and navigate the legal, ethical, and reputational risks that come with getting it wrong; and the broader population those systems affect, with particular attention to vulnerable populations who bear the greatest consequences when the intersection is not understood or designed for. The goal is to draw on existing research across HCI, AI, and cybersecurity to give organizations practical, applied guidance they can sustain as these technologies continue to evolve and reshape daily life across every sector of society."</div>
+    </div>
+  </div>
+
+  <!-- How It All Layers Together -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-title">How It All Layers Together</span></div>
+    <div class="three-circles">
+      <div class="circle-card">
+        <div class="circle-num">1</div>
+        <div class="circle-label">The Interconnected Foundation</div>
+        <div class="circle-text">HCI, AI, and cybersecurity cannot be separated. How do people interact with technology where all three are at work simultaneously - and what happens when they do not understand, trust, or safely navigate that intersection?</div>
+      </div>
+      <div class="circle-card">
+        <div class="circle-num">2</div>
+        <div class="circle-label">The Complication</div>
+        <div class="circle-text">AI changes everything at that intersection - making systems more powerful, more opaque, and higher stakes. It is also being actively weaponized against the people those systems are supposed to serve.</div>
+      </div>
+      <div class="circle-card">
+        <div class="circle-num">3</div>
+        <div class="circle-label">The Organizational Responsibility</div>
+        <div class="circle-text">Who is most harmed when organizations get this intersection wrong - and what does existing research tell us that organizations, technology and cybersecurity professionals, and policymakers must understand and do differently?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Research Questions -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-title">Core Research Questions</span></div>
+    <div class="bullet-card">
+      <div class="bullet-card-hdr">What This Research Asks</div>
+      <div class="bullet-list">
+        <div class="bullet-item"><div class="bullet-dot"></div>How do people interact with technology, AI, and cybersecurity - and do they actually understand, trust, and navigate them safely?</div>
+        <div class="bullet-item"><div class="bullet-dot"></div>How does AI change the human relationship with technology and cybersecurity - and does it make that relationship better or worse?</div>
+        <div class="bullet-item"><div class="bullet-dot"></div>Do AI-driven security interfaces improve or worsen human decision-making during security incidents?</div>
+        <div class="bullet-item"><div class="bullet-dot"></div>What UX design principles make AI-powered technology and cybersecurity tools more usable and effective for everyday users?</div>
+        <div class="bullet-item"><div class="bullet-dot"></div>What are the policy and ethical implications of AI making autonomous security decisions?</div>
+        <div class="bullet-item"><div class="bullet-dot"></div>How can UX design of AI security tools be leveraged to guide legally compliant user behavior?</div>
+        <div class="bullet-item"><div class="bullet-dot"></div>How do people form, calibrate, and lose trust in AI systems - and what design, behavioral, and psychological factors drive that?</div>
+        <div class="bullet-item"><div class="bullet-dot"></div>How do people relate to AI not just as a tool but as something they interact with, depend on, and are affected by emotionally and cognitively?</div>
+        <div class="bullet-item"><div class="bullet-dot"></div>Are AI-powered technology and cybersecurity systems designed in ways that vulnerable populations can actually use, understand, and safely interact with - and what are the legal and ethical implications when they are not?</div>
+        <div class="bullet-item"><div class="bullet-dot"></div>How do businesses, NGOs, and government agencies go about building and implementing AI-powered technology and cybersecurity, and what does understanding the humanistic approach - including its legal, ethical, and human-centered dimensions - require of them in practice?</div>
+        <div class="bullet-item"><div class="bullet-dot"></div>How are generative AI tools being used to harm individuals - through synthetic imagery, voice cloning, sextortion, and AI-enhanced fraud - and what does that mean for design, policy, and the protection of vulnerable populations?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vulnerable Populations -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-title">Vulnerable Populations: A Critical Focus Within the Broader Research</span></div>
+    <div class="bullet-card">
+      <div class="bullet-card-hdr">Populations at Greatest Risk When the Intersection Is Not Understood</div>
+      <div class="bullet-list">
+        <div class="bullet-item"><div class="bullet-dot"></div><strong>Elderly users</strong> - May struggle with AI-generated security prompts, unfamiliar interfaces, and complex consent language. May over-trust AI due to unfamiliarity with its limitations. Are disproportionately targeted by cybercrime - including romance scams, grandparent fraud, and AI-enhanced impersonation schemes - and are increasingly targeted by AI-powered versions of these attacks that are harder to detect and easier to fall for. Cognitive decline further compounds all of these risks and intersects directly with disability (see below).</div>
+        <div class="bullet-item"><div class="bullet-dot"></div><strong>People with disabilities</strong> - Disability is not a single category. It encompasses a wide range of physical, sensory, cognitive, and neurological differences that each carry distinct implications for how a person interacts with technology, cybersecurity systems, and AI. Key disability types and their intersections with technology risk include: <em>Visual impairments</em> - screen reader users may encounter AI interfaces that are not accessible, miss visual security indicators, or be unable to verify URLs and sender identity through standard visual cues; <em>Hearing impairments</em> - audio-based security alerts, voice authentication systems, and AI voice interfaces create systematic exclusion and missed warnings; <em>Cognitive and intellectual disabilities</em> - difficulty parsing complex interfaces, multi-step authentication flows, legal consent language, and security warnings that are designed without plain-language accessibility in mind; <em>Neurological differences (ADHD, autism spectrum)</em> - different patterns of attention, trust, and social inference that AI and security systems rarely account for, and that can lead to both over-trust and under-trust in ways that create exploitable vulnerability; <em>Motor disabilities</em> - reliance on alternative input methods (voice control, switch access, eye tracking) can expose sensitive information in shared or public environments; <em>Cognitive decline and acquired disabilities</em> - progressive conditions like Alzheimer's and dementia create layered vulnerability that worsens over time, often intersecting with aging to compound risk in ways that are not well understood in either the HCI or cybersecurity literature.</div>
+        <div class="bullet-item"><div class="bullet-dot"></div><strong>The intersectionality of vulnerability - why categories cannot be treated as separate</strong> - These populations are not mutually exclusive, and treating them as separate categories misrepresents how vulnerability actually works. A person can be elderly and have a visual impairment. A teenager can have ADHD and low digital literacy. A woman targeted by NCII may also have a mental health condition that shapes how she experiences and responds to the harm. An elderly person with early-stage dementia interacting with a romance scam chatbot is not experiencing one risk factor - they are experiencing compounding, intersecting vulnerabilities that no single intervention can address. The research must account for these intersections explicitly, because the people in those overlapping spaces are often the most harmed and the least represented in existing scholarship.</div>
+        <div class="bullet-item"><div class="bullet-dot"></div><strong>Low-literacy users</strong> - Cannot adequately parse legal disclosures, security warnings, or AI-driven alerts. Cannot advocate for themselves in AI-mediated systems. This category often intersects with cognitive disability, limited education access, and language barriers in ways that compound the underlying literacy gap.</div>
+        <div class="bullet-item"><div class="bullet-dot"></div><strong>Users with mental health conditions</strong> - Anxiety, depression, paranoia, PTSD, ADHD, and other conditions fundamentally alter how users perceive, trust, and respond to AI and technology systems. Poorly designed systems can cause real harm and compound existing challenges. Mental health conditions also intersect with disability in both clinical and legal definitions, and the research must address that overlap rather than siloing them.</div>
+        <div class="bullet-item"><div class="bullet-dot"></div><strong>Low digital literacy users</strong> - Cannot evaluate AI outputs or recognize AI limitations. May not understand they are interacting with AI at all. Foundational technology barriers precede every AI and security barrier on top of them. Digital literacy gaps intersect heavily with age, disability, education access, and socioeconomic status.</div>
+        <div class="bullet-item"><div class="bullet-dot"></div><strong>Children and teenagers</strong> - The first generation growing up with AI as ambient infrastructure. They interact with algorithmic systems before they have the cognitive development or digital literacy to understand them. They are subject to data collection from childhood, face unique risks around AI-generated content, manipulation, and exploitation, and are often the most emotionally and developmentally impacted by AI-mediated social environments - yet are among the least represented in AI design and safety research. Children with disabilities or developmental differences face compounded risks in this space.</div>
+        <div class="bullet-item"><div class="bullet-dot"></div><strong>Those required to interact with technology as a whole</strong> - Cybersecurity is inseparable from technology. Every security layer built on top of a system a user already struggles to navigate becomes an additional barrier and risk. These users cannot opt out of systems that have become essential infrastructure.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real World Problems -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-title">Real World Problems This Research Addresses</span></div>
+    <div class="sentence-block" style="margin-bottom:1rem;">
+      <div class="sentence-label">Why These Problems Are Connected</div>
+      <div class="sentence-text">Every problem below exists because HCI, AI, and cybersecurity are being treated as separate concerns. When organizations understand the intersection of all three - and apply that understanding to how they build, deploy, and govern technology - these problems become addressable. That is the applied contribution this research works toward.</div>
+    </div>
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">1</div><div class="rw-title">Are AI-powered technologies truly accessible - and when they are not, do they exclude people or introduce the very risks they were meant to prevent?</div></div>
+      <div class="rw-body">As AI-powered technology becomes embedded in banking, healthcare, government services, social media, workplace automation, and the growing range of platforms integrating AI, a core question emerges: are these systems genuinely accessible to everyone, or is accessibility a compliance checkbox rather than a design commitment? When security and authentication are built without the full range of users in mind, vulnerable populations may face barriers that result in exclusion, or worse, systems that introduce more risk than they prevent.
+
+      A subtler question also arises: when does trying too hard to be secure, or too hard to be accessible, itself become the problem? Over-layering security can produce fatigue and workarounds. Removing friction in the name of accessibility can strip away protections that were actually serving a purpose. This research asks where the line is between security that protects and security that harms, and between accessibility that includes and accessibility that exposes.</div>
+    </div>
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">2</div><div class="rw-title">AI is making decisions that humans do not understand</div></div>
+      <div class="rw-body">As AI becomes more deeply integrated into the systems people depend on, questions arise about how autonomous decision-making affects the humans on the receiving end of those decisions. When an AI-driven system makes a determination that impacts someone's access to services, financial accounts, or personal data, there is reason to examine whether people can understand what happened, why it happened, and what - if anything - they can do about it. The degree to which AI decision-making is transparent, contestable, and legible to everyday users is not yet fully understood, particularly across different populations and contexts. This research asks what happens to trust, agency, and safety when people interact with systems that make consequential decisions they may not be able to interpret or challenge - and what design and communication standards might make those interactions more equitable and accountable.</div>
+    </div>
+
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">3</div><div class="rw-title">AI is built by humans - and human biases can be embedded in the systems it powers</div></div>
+      <div class="rw-body">AI systems learn from data generated by humans, and the people who build them bring their own perspectives and blind spots to the process. This raises a well-documented concern: that biases in training data, design decisions, or implementation choices become embedded in AI outputs in ways that are difficult to detect, contest, or correct. When AI tools are used in hiring, lending, healthcare, legal proceedings, or content moderation, biased outputs do not affect all users equally. They tend to concentrate harm in communities already underrepresented in the data that shaped the system. This research asks how awareness of bias should inform how organizations design, evaluate, and deploy AI-powered technology, and what a human-centered implementation framework must require of those who build it.</div>
+    </div>
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">4</div><div class="rw-title">Vulnerable and underserved populations are disproportionately affected when AI-powered technology and cybersecurity are not designed with everyone in mind</div></div>
+      <div class="rw-body">When AI-powered technology is built without accounting for the full range of people who will encounter it, the gaps tend to fall hardest on those least equipped to navigate around them: elderly users, people with disabilities, children and teenagers, low-literacy users, those with mental health conditions, and others whose needs fall outside the assumptions of most technology design. Research across HCI, accessibility, and cybersecurity has documented how design decisions made without representative input produce systems that work well for some users and poorly for others. What remains less understood is how these dynamics play out in AI-powered contexts, and across intersecting vulnerabilities. This dissertation draws on existing scholarship to examine where those gaps are most consequential, and what organizations, policymakers, and technology professionals can do to build and implement more equitably.</div>
+    </div>
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">5</div><div class="rw-title">Trust in technology and AI is eroding</div></div>
+      <div class="rw-body">Across every demographic, trust in AI and technology systems is declining. People do not know when they are interacting with AI, do not understand what it is doing with their data, and do not believe it is working in their interest. That erosion of trust has real consequences - people avoid healthcare technology, disengage from financial systems, and make themselves more vulnerable by trying to opt out of systems they cannot trust. This research examines what builds and breaks that trust and how design can restore it.</div>
+    </div>
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">6</div><div class="rw-title">Legal compliance is failing real people</div></div>
+      <div class="rw-body">Laws like the ADA, GDPR, CCPA, COPPA, and emerging AI regulations exist to protect people. A recurring pattern in the existing literature is that legal compliance is treated as a checkbox rather than a genuine design commitment - producing systems that are technically compliant but practically inaccessible or unsafe for real users. This research draws on what is already known about the relationship between UX design, accessibility, and legal frameworks to examine how that gap manifests in AI-powered technology and cybersecurity contexts, and what applied guidance can help organizations move from performative compliance toward protection that actually works.</div>
+    </div>
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">7</div><div class="rw-title">Cybersecurity is a human problem, not just a technical one</div></div>
+      <div class="rw-body">Research consistently shows that a significant proportion of security incidents involve a human element - someone clicking a phishing link, ignoring a warning, or failing to respond to an alert in time. The question of how human behavior, cognitive load, interface design, and psychological factors shape security outcomes is not new to the literature. What remains less examined is how AI is changing that equation - making threats more sophisticated, making security interfaces more complex, and placing greater cognitive demands on both everyday users and security professionals. This research applies existing knowledge about human factors in cybersecurity to the AI-powered context, where the human dimension is more consequential than ever.</div>
+    </div>
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">8</div><div class="rw-title">Mental health and technology intersect in ways nobody is designing for</div></div>
+      <div class="rw-body">People experiencing depression, anxiety, PTSD, ADHD, and other conditions interact with technology in ways that may differ meaningfully from users without those conditions - and existing research suggests this has implications for how they engage with AI-powered tools and cybersecurity systems. This dissertation draws on what is already known about mental health, cognition, and human-computer interaction to examine how those patterns intersect with AI and cybersecurity contexts, with the goal of helping organizations, technology professionals, and policymakers better understand and account for this population in the systems they build and deploy.</div>
+    </div>
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">9</div><div class="rw-title">Businesses and governments are building and deploying AI without a humanistic framework</div></div>
+      <div class="rw-body">Businesses and governments are both building and deploying AI-powered technology and cybersecurity systems - and in either role, many are doing so without a sufficient understanding of how the humanistic approach should inform those decisions. An organization building its own AI-powered product carries responsibility for what it creates and how it behaves. An organization deploying a third-party AI tool carries responsibility for how it is implemented, configured, and used within their context. In both cases, the human-centered obligations do not disappear because the technology was made elsewhere or implemented by someone else. Organizations across both roles need guidance on how to account for human behavior, protect vulnerable populations, meet their legal and ethical obligations, and build implementation practices that go beyond technical requirements alone.</div>
+    </div>
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">10</div><div class="rw-title">People with disabilities are doubly excluded - by design failures and by cybercrime</div></div>
+      <div class="rw-body">People with disabilities face a two-front problem. First, AI and cybersecurity systems are often designed without them in mind, creating access barriers, missed security warnings, and interfaces that assistive technologies cannot navigate. Second, those same accessibility needs can be exploited by bad actors. A person using voice control may expose credentials in shared spaces. A person with low vision cannot verify URLs visually. A person with cognitive decline may be unable to detect a phishing attempt designed to look legitimate. Disability is not a single category but a spectrum of intersecting conditions, each carrying distinct implications for how people interact with technology and how they can be harmed through it. Most existing cybersecurity guidance was not written with any of them in mind.</div>
+    </div>
+
+    <div class="real-world-card">
+      <div class="rw-hdr"><div class="rw-num">11</div><div class="rw-title">AI is making existing cybersecurity threats against vulnerable populations more effective and harder to counter</div></div>
+      <div class="rw-body">Cybersecurity threats targeting vulnerable populations are not new. Romance scams, grandparent fraud, and financial impersonation have existed for years. What AI has changed is the scale, sophistication, and psychological precision of those attacks, and how inadequate traditional protective guidance has become. An AI-powered romance scam maintains consistent personas over months, adapts to its target's emotional responses, and generates voice, images, and video to reinforce the deception. For someone experiencing cognitive decline, research on social cognition suggests the interaction may be deeply convincing in ways that are difficult to resist. The standard guidance loses traction when the person has formed a months-long emotional bond with what they believe is a real relationship. This research examines not only how to design better systems, but what meaningful protective guidance looks like for people whose cognitive and psychological state makes standard guidance difficult or impossible to act on.</div>
+    </div>
+
+  </div>
+
+  <!-- How It Applies Practically -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-title">How It Applies Practically</span></div>
+    <div class="table-wrap">
+      <div class="table-hdr">Research Findings and Industry Applications</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Research Finding</th>
+            <th>Industry Application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>How people interact with technology, AI, and cybersecurity across different contexts and populations</td>
+            <td>Human-centered design frameworks for building technology that works for everyone from the start</td>
+          </tr>
+          <tr>
+            <td>How trust in AI is formed and broken</td>
+            <td>Product design guidelines for building trustworthy AI interfaces</td>
+          </tr>
+          <tr>
+            <td>How vulnerable populations interact with AI systems</td>
+            <td>Accessibility auditing frameworks for AI-powered products across all industries</td>
+          </tr>
+          <tr>
+            <td>How UX design affects legal compliance behavior</td>
+            <td>Compliance by design methodologies for regulated industries</td>
+          </tr>
+          <tr>
+            <td>How mental health affects human-AI interaction</td>
+            <td>Clinical and workplace guidelines for responsible AI deployment</td>
+          </tr>
+          <tr>
+            <td>How low digital literacy creates security vulnerability</td>
+            <td>Training and onboarding frameworks for non-technical users</td>
+          </tr>
+          <tr>
+            <td>How AI transparency affects user trust</td>
+            <td>Explainable AI design standards for consumer-facing products</td>
+          </tr>
+          <tr>
+            <td>How cybersecurity design fails vulnerable users</td>
+            <td>Inclusive security design standards and policy recommendations</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Industry and Sector Applicability -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-title">Industry and Sector Applicability</span></div>
+    <div class="applicability-sentence">
+      <p>"This research is applicable to any business, organization, NGO, or government entity that builds, deploys, or both builds and deploys AI-powered technology. Whether they are creating a consumer product, integrating AI into internal operations, or setting policy for others who do - they are operating at the intersection of HCI, AI, and cybersecurity, whether they know it or not. This research helps them understand that intersection and act on it responsibly."</p>
+    </div>
+    <div class="sector-grid">
+      <div class="sector-card">
+        <div class="sector-hdr">Private Sector / Business</div>
+        <div class="sector-list">
+          <div class="sector-item"><div class="sector-dot"></div>Technology and AI companies</div>
+          <div class="sector-item"><div class="sector-dot"></div>Cybersecurity firms</div>
+          <div class="sector-item"><div class="sector-dot"></div>Financial institutions</div>
+          <div class="sector-item"><div class="sector-dot"></div>Healthcare organizations</div>
+          <div class="sector-item"><div class="sector-dot"></div>Insurance companies</div>
+          <div class="sector-item"><div class="sector-dot"></div>Legal and compliance firms</div>
+          <div class="sector-item"><div class="sector-dot"></div>Retail and e-commerce</div>
+          <div class="sector-item"><div class="sector-dot"></div>Education technology</div>
+          <div class="sector-item"><div class="sector-dot"></div>Nonprofit organizations</div>
+        </div>
+      </div>
+      <div class="sector-card">
+        <div class="sector-hdr">Public Sector / Government</div>
+        <div class="sector-list">
+          <div class="sector-item"><div class="sector-dot"></div>Federal and state agencies</div>
+          <div class="sector-item"><div class="sector-dot"></div>Public benefits and social services</div>
+          <div class="sector-item"><div class="sector-dot"></div>Law enforcement and public safety</div>
+          <div class="sector-item"><div class="sector-dot"></div>Judicial and legal systems</div>
+          <div class="sector-item"><div class="sector-dot"></div>Public health infrastructure</div>
+          <div class="sector-item"><div class="sector-dot"></div>Military and defense technology</div>
+          <div class="sector-item"><div class="sector-dot"></div>Municipal and local government</div>
+          <div class="sector-item"><div class="sector-dot"></div>Education and public universities</div>
+          <div class="sector-item"><div class="sector-dot"></div>Emergency and crisis services</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IS AI SECTION -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-title">Understanding AI: Context for the Research</span></div>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('what')">What Is AI</button>
+      <button class="tab-btn" onclick="switchTab('how')">How It's Already Being Used</button>
+      <button class="tab-btn" onclick="switchTab('feel')">How People Feel About AI</button>
+      <button class="tab-btn" onclick="switchTab('proscon')">Pros & Cons of Human-AI Interaction</button>
+    </div>
+
+    <!-- Tab: What Is AI -->
+    <div class="tab-panel active" id="tab-what">
+      <div class="sentence-block">
+        <div class="sentence-label">Working Definition</div>
+        <div class="sentence-text">"Artificial intelligence refers to computer systems designed to perform tasks that typically require human intelligence - such as understanding language, recognizing patterns, making decisions, and generating content - by learning from data rather than following rigid, hand-written rules."</div>
+      </div>
+      <div class="two-col">
+        <div class="bullet-card">
+          <div class="bullet-card-hdr">Core AI Types</div>
+          <div class="bullet-list">
+            <div class="bullet-item"><div class="bullet-dot"></div><strong>Narrow AI</strong> - Designed for one specific task. Most AI in use today: spam filters, recommendation engines, fraud detection.</div>
+            <div class="bullet-item"><div class="bullet-dot"></div><strong>Generative AI</strong> - Creates new content (text, images, code, audio) by learning patterns. ChatGPT, Claude, DALL-E, and Gemini fall here.</div>
+            <div class="bullet-item"><div class="bullet-dot"></div><strong>Machine Learning</strong> - Systems that improve through exposure to data, rather than being explicitly programmed with rules.</div>
+            <div class="bullet-item"><div class="bullet-dot"></div><strong>Large Language Models (LLMs)</strong> - AI trained on vast text datasets to understand and generate human language at scale.</div>
+          </div>
+        </div>
+        <div class="bullet-card">
+          <div class="bullet-card-hdr">Key Characteristics</div>
+          <div class="bullet-list">
+            <div class="bullet-item"><div class="bullet-dot"></div><strong>Pattern recognition</strong> - Identifies structure in data at a scale and speed no human could match.</div>
+            <div class="bullet-item"><div class="bullet-dot"></div><strong>Probabilistic outputs</strong> - Produces answers based on likelihood, not certainty. This is why AI can hallucinate or mislead.</div>
+            <div class="bullet-item"><div class="bullet-dot"></div><strong>Opacity</strong> - Many AI systems cannot explain their own reasoning, creating the "black box" problem.</div>
+            <div class="bullet-item"><div class="bullet-dot"></div><strong>Training data dependency</strong> - AI reflects the biases, gaps, and assumptions in the data it was trained on.</div>
+          </div>
+        </div>
+      </div>
+      <div class="sentence-block">
+        <div class="sentence-label">Why This Matters for the Dissertation</div>
+        <div class="sentence-text">"AI is not a single technology with a single effect on people - it is a diverse set of systems that interact with humans in very different ways depending on context, design, and deployment. Cybersecurity is increasingly inseparable from that picture: AI is reshaping how threats are generated, how defenses are built, and how security decisions are made. And human-computer interaction is the lens through which both must be understood - because at the center of every AI system and every cybersecurity decision is a human being whose experience, comprehension, trust, and safety determine whether those systems succeed or fail. Understanding what AI actually is and how it intersects with cybersecurity and HCI is foundational to the applied research this dissertation pursues."</div>
+      </div>
+    </div>
+
+    <!-- Tab: How It's Already Being Used -->
+    <div class="tab-panel" id="tab-how">
+      <div class="usage-grid">
+        <div class="usage-card"><div class="usage-icon">🏥</div><div class="usage-title">Healthcare</div><div class="usage-desc">Medical imaging diagnosis, patient risk scoring, drug discovery, clinical decision support, virtual triage assistants, and mental health chatbots.</div></div>
+        <div class="usage-card"><div class="usage-icon">🏦</div><div class="usage-title">Financial Services</div><div class="usage-desc">Fraud detection, credit scoring, algorithmic trading, loan underwriting, customer service bots, and personalized financial advice tools.</div></div>
+        <div class="usage-card"><div class="usage-icon">🎓</div><div class="usage-title">Education</div><div class="usage-desc">Adaptive learning platforms, AI tutors, automated essay grading, plagiarism detection, and personalized curriculum tools used at every level from K–12 to graduate programs.</div></div>
+        <div class="usage-card"><div class="usage-icon">⚖️</div><div class="usage-title">Legal & Government</div><div class="usage-desc">Predictive risk scoring in criminal justice, benefits eligibility determination, legal research tools, document review, and public-facing chatbot assistance systems.</div></div>
+        <div class="usage-card"><div class="usage-icon">🔒</div><div class="usage-title">Cybersecurity</div><div class="usage-desc">Threat detection and response, anomaly detection, phishing identification, user behavior analytics, identity verification, and AI-powered SOC platforms.</div></div>
+        <div class="usage-card"><div class="usage-icon">📱</div><div class="usage-title">Everyday Consumer Tech</div><div class="usage-desc">Recommendation engines, voice assistants, predictive text, content moderation, search ranking, and increasingly, AI companions embedded in consumer apps.</div></div>
+        <div class="usage-card"><div class="usage-icon">🏭</div><div class="usage-title">Workplace & HR</div><div class="usage-desc">Resume screening, performance monitoring, workforce scheduling, productivity tracking, AI meeting summarization, and hiring decision support.</div></div>
+        <div class="usage-card"><div class="usage-icon">👦</div><div class="usage-title">Children's Environments</div><div class="usage-desc">Educational apps, social media algorithms, AI tutoring tools, content recommendation on streaming platforms, and AI companions marketed specifically to children and teens.</div></div>
+        <div class="usage-card"><div class="usage-icon">🚨</div><div class="usage-title">Emergency & Crisis Services</div><div class="usage-desc">Emergency dispatch triage, predictive policing, disaster response coordination, crisis hotline AI support layers, and public health surveillance systems.</div></div>
+      </div>
+      <div class="sentence-block">
+        <div class="sentence-label">Research Implication</div>
+        <div class="sentence-text">"AI is not a future concern - it is a present one. These systems are making real decisions about real people across virtually every sector, often without those people knowing, understanding, or meaningfully consenting to AI's role. The human experience of interacting with these systems - whether they understand it, trust it, and can safely navigate it - is the foundation of this dissertation."</div>
+      </div>
+    </div>
+
+    <!-- Tab: How People Feel About AI -->
+    <div class="tab-panel" id="tab-feel">
+      <div class="sentence-block">
+        <div class="sentence-label">The Public Sentiment Landscape</div>
+        <div class="sentence-text">"Public attitudes toward AI are not uniform - they vary dramatically by age, education, sector of use, prior experience, and whether someone has had a positive or negative encounter with an AI system. What research consistently shows is that most people hold AI at arm's length: aware of it, uncertain about it, and often unable to clearly articulate either their concerns or their trust."</div>
+      </div>
+      <div class="sentiment-grid">
+        <div class="sentiment-card">
+          <div class="sentiment-hdr pos">Where People Are Optimistic</div>
+          <div class="sentiment-list">
+            <div class="sentiment-item"><div class="s-dot-pos"></div>Medical AI for earlier disease detection and diagnosis is broadly welcomed, especially by people who have experienced delayed diagnosis.</div>
+            <div class="sentiment-item"><div class="s-dot-pos"></div>AI tools that save time on repetitive tasks are viewed positively, particularly by workers who feel AI handles the burden and not the judgment.</div>
+            <div class="sentiment-item"><div class="s-dot-pos"></div>Young people and tech-comfortable users tend to show more openness, viewing AI as a useful assistant rather than a threat.</div>
+            <div class="sentiment-item"><div class="s-dot-pos"></div>Accessibility features powered by AI - such as captioning, screen readers, and translation - receive strong positive reception from disability communities.</div>
+            <div class="sentiment-item"><div class="s-dot-pos"></div>AI in low-stakes, personal productivity contexts (scheduling, recommendations, organization) tends to generate positive responses with low anxiety.</div>
+          </div>
+        </div>
+        <div class="sentiment-card">
+          <div class="sentiment-hdr neg">Where People Are Anxious or Distrustful</div>
+          <div class="sentiment-list">
+            <div class="sentiment-item"><div class="s-dot-neg"></div>Job displacement is one of the most consistent sources of fear - a majority of workers in multiple surveys express concern that AI will reduce employment in their field.</div>
+            <div class="sentiment-item"><div class="s-dot-neg"></div>Surveillance and privacy concerns are widespread, particularly around facial recognition, behavioral tracking, and data collection without clear consent.</div>
+            <div class="sentiment-item"><div class="s-dot-neg"></div>AI in high-stakes decisions - criminal justice, hiring, benefits - generates the strongest distrust, particularly among communities that have experienced algorithmic discrimination.</div>
+            <div class="sentiment-item"><div class="s-dot-neg"></div>Many people report not knowing when they are interacting with AI at all, and feeling deceived or unsettled when they discover they were.</div>
+            <div class="sentiment-item"><div class="s-dot-neg"></div>Parents express particular anxiety about AI's impact on children - around social media algorithms, AI companions, and content generation targeting minors.</div>
+          </div>
+        </div>
+      </div>
+      <div class="bullet-card">
+        <div class="bullet-card-hdr">Demographic Patterns in AI Sentiment</div>
+        <div class="bullet-list">
+          <div class="bullet-item"><div class="bullet-dot"></div><strong>Age</strong> - Older adults tend to express more caution and less familiarity. Teenagers and young adults are more likely to use AI tools regularly but may underestimate risks.</div>
+          <div class="bullet-item"><div class="bullet-dot"></div><strong>Education and income</strong> - Higher education and income are associated with both greater AI use and greater critical awareness of its limitations - but not always greater safety.</div>
+          <div class="bullet-item"><div class="bullet-dot"></div><strong>Race and ethnicity</strong> - Communities historically subject to surveillance and algorithmic discrimination show measurably lower trust in AI systems, particularly those deployed by law enforcement or government.</div>
+          <div class="bullet-item"><div class="bullet-dot"></div><strong>Sector of exposure</strong> - People who have experienced AI negatively (a denied loan, a wrong diagnosis, a moderation error) carry lasting distrust that generalizes well beyond the original system.</div>
+          <div class="bullet-item"><div class="bullet-dot"></div><strong>Children and teens</strong> - Research on how young people feel about AI is still emerging, but early evidence suggests teens have high engagement with AI tools alongside low understanding of how those tools work, what data they collect, and who controls them.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Pros & Cons of Human-AI Interaction -->
+    <div class="tab-panel" id="tab-proscon">
+      <div class="sentence-block">
+        <div class="sentence-label">The Dual Nature of Human-AI Interaction</div>
+        <div class="sentence-text">"AI interaction is not inherently beneficial or harmful - its impact depends almost entirely on how a system is designed, who it is designed for, how transparently it operates, and whether the humans interacting with it have the literacy, access, and power to understand and influence what it does."</div>
+      </div>
+      <div class="proscon-grid">
+        <div class="proscon-card pros">
+          <div class="proscon-hdr">Potential Benefits</div>
+          <div class="proscon-list">
+            <div class="proscon-item"><div class="s-dot-pos"></div><strong>Accessibility gains</strong> - AI can reduce barriers for users with disabilities, language differences, or low literacy when designed with those populations in mind.</div>
+            <div class="proscon-item"><div class="s-dot-pos"></div><strong>Decision support</strong> - AI can surface relevant information at the right moment, helping users make better-informed decisions without requiring expert knowledge.</div>
+            <div class="proscon-item"><div class="s-dot-pos"></div><strong>Speed and availability</strong> - AI systems operate 24/7 and respond instantly, expanding access to services that previously required waiting, scheduling, or geographic proximity.</div>
+            <div class="proscon-item"><div class="s-dot-pos"></div><strong>Error reduction in routine tasks</strong> - In well-defined, low-ambiguity contexts, AI consistently outperforms humans on precision and reduces costly mistakes.</div>
+            <div class="proscon-item"><div class="s-dot-pos"></div><strong>Personalization</strong> - AI can tailor experiences, content, and security responses to individual user behavior, improving relevance and reducing friction.</div>
+            <div class="proscon-item"><div class="s-dot-pos"></div><strong>Scale</strong> - AI makes it possible to extend services to far larger populations than human workforces alone could serve, including in low-resource or underserved communities.</div>
+          </div>
+        </div>
+        <div class="proscon-card cons">
+          <div class="proscon-hdr">Known Risks and Harms</div>
+          <div class="proscon-list">
+            <div class="proscon-item"><div class="s-dot-neg"></div><strong>Opacity and loss of accountability</strong> - When AI makes consequential decisions that humans cannot understand or contest, accountability disappears and harm goes unaddressed.</div>
+            <div class="proscon-item"><div class="s-dot-neg"></div><strong>Automation bias</strong> - People over-trust AI recommendations, deferring to algorithmic outputs even when they are wrong, especially in high-stakes or high-pressure situations.</div>
+            <div class="proscon-item"><div class="s-dot-neg"></div><strong>Bias and discrimination</strong> - AI systems trained on historical data reproduce and amplify historical inequities, harming already-marginalized populations disproportionately.</div>
+            <div class="proscon-item"><div class="s-dot-neg"></div><strong>Cognitive and emotional dependency</strong> - Prolonged interaction with AI systems can erode independent judgment, critical thinking, and human relationship skills - particularly in younger users still developing these capacities.</div>
+            <div class="proscon-item"><div class="s-dot-neg"></div><strong>Security exploitation</strong> - Bad actors use AI to generate more convincing phishing, deepfakes, and social engineering at scale, making every human user a more vulnerable target.</div>
+            <div class="proscon-item"><div class="s-dot-neg"></div><strong>Privacy erosion</strong> - Human-AI interaction generates enormous amounts of behavioral data that can be exploited, sold, or used to surveil without users' meaningful understanding or consent.</div>
+          </div>
+        </div>
+      </div>
+      <div class="bullet-card">
+        <div class="bullet-card-hdr">How This Directly Informs the Research</div>
+        <div class="bullet-list">
+          <div class="bullet-item"><div class="bullet-dot"></div>The benefits of AI interaction are real - but they are not evenly distributed. They accrue most to users who already have digital literacy, technological access, and system familiarity.</div>
+          <div class="bullet-item"><div class="bullet-dot"></div>The harms of AI interaction are also real - and they concentrate in vulnerable populations who have the least capacity to recognize, resist, or recover from them.</div>
+          <div class="bullet-item"><div class="bullet-dot"></div>Human-centered design is the mechanism through which the benefits can be expanded and the harms can be reduced. This dissertation builds the research foundation that makes that possible.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER DRAFTS SECTION -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-title">Dissertation Chapter Drafts, Research Proposal</span></div>
+    <div id="chapters-wrapper">
+    <div class="sentence-block">
+      <div class="sentence-label">Current Status</div>
+      <div class="sentence-text">"This is a research proposal map, not an active dissertation. It outlines the topics, questions, and chapter structure being developed as part of the application and planning process for the Purdue Doctor of Technology program. The D.Tech. is distinguished from a PhD in that it applies and synthesizes existing knowledge to address a real-world industry gap - rather than generating new theory. The chapters below reflect proposed research directions and will evolve through committee formation, feedback, and the formal research design process."</div>
+    </div>
+
+    <!-- CH 1 -->
+    <div class="chapter-card">
+      <div class="chapter-hdr">
+        <div class="chapter-num">1</div>
+        <div class="chapter-meta">
+          <div class="chapter-title">Introduction: The Human Side of AI and Cybersecurity</div>
+          <div class="chapter-sub">Problem Statement · Significance · Research Questions · Overview</div>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-purpose">This chapter establishes why human-centered research in AI and cybersecurity is both urgent and underserved. It introduces the central tension of the dissertation: AI and cybersecurity are increasingly consequential for everyday people, yet the systems that govern these technologies are still largely designed by and for technically sophisticated users. It names the problem clearly, articulates why it matters, and lays out the research questions that will structure the work.</div>
+        <div class="chapter-topics">
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Problem statement:</strong> AI-powered technology and cybersecurity systems are being deployed across every sector, but the human experience of interacting with these systems - trust, usability, accessibility, comprehension - is rarely centered in their design.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Significance:</strong> The populations most dependent on these systems are often the least equipped to navigate them safely. Vulnerable populations - including elderly users, those with disabilities, low-literacy users, people with mental health conditions, and children and teenagers - face disproportionate harm when these systems fail or exclude them.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Research questions:</strong> How do people form and lose trust in AI? How does UX design shape security behavior and legal compliance? What happens when AI systems are not designed with vulnerable populations in mind? How do children and teens navigate AI-mediated environments without the tools to understand them?</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Overview of approach:</strong> Applied, interdisciplinary research drawing on human-centered computing, cybersecurity, psychology, and legal/policy frameworks. Grounded in real-world contexts and practitioner-oriented in its outputs.</div>
+        </div>
+        <details class="chapter-status-details"><summary>Research Status</summary><span class="chapter-status-text">Proposed, topic outline in development</span></details>
+      </div>
+    </div>
+
+    <!-- CH 2 -->
+    <div class="chapter-card">
+      <div class="chapter-hdr">
+        <div class="chapter-num">2</div>
+        <div class="chapter-meta">
+          <div class="chapter-title">Literature Review: Trust, AI, and the Human Experience of Technology</div>
+          <div class="chapter-sub">Theoretical Framework · Prior Research · Identified Gaps</div>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-purpose">This chapter surveys existing scholarship across the intersecting fields the dissertation draws on: human-computer interaction, trust in automation, cybersecurity UX, accessibility, AI ethics, and emerging research on vulnerable populations in digital environments. It identifies where the literature converges, where it conflicts, and most importantly - where the gaps are that this dissertation will address.</div>
+        <div class="chapter-topics">
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Trust in AI systems:</strong> What existing research tells us about how trust is formed, calibrated, broken, and restored in human-AI relationships - and the specific factors (transparency, explainability, perceived competence, alignment) that drive it.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Cybersecurity as a human problem:</strong> Literature on human error in security, social engineering, security fatigue, and the behavioral psychology of threat response.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>UX design and compliance:</strong> Research on how interface design shapes legally significant user behavior, including consent, disclosure, and data privacy decisions.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Vulnerable populations in AI and technology:</strong> What we know - and what is largely missing - about how elderly users, people with disabilities, low-literacy users, mental health populations, and children and teens experience AI-mediated systems. Particular attention to the disability literature and the intersecting vulnerabilities compounding effect.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>AI as an amplifier of existing cybersecurity threats:</strong> Emerging literature on how generative AI has transformed previously well-understood threat categories - romance scams, phishing, impersonation fraud, sextortion - and what that demands of researchers, designers, and policymakers. Identifies the gap between existing protective guidance and current reality, particularly for vulnerable populations.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>AI literacy and risk perception:</strong> Research on how people understand (or misunderstand) what AI is and does, and how that shapes their risk behavior online and offline.</div>
+        </div>
+        <details class="chapter-status-details"><summary>Research Status</summary><span class="chapter-status-text">Proposed, pending formal research design</span></details>
+      </div>
+    </div>
+
+    <!-- CH 3 -->
+    <div class="chapter-card">
+      <div class="chapter-hdr">
+        <div class="chapter-num">3</div>
+        <div class="chapter-meta">
+          <div class="chapter-title">Generative AI and the Threat Landscape: Risks, Harms, and Human Vulnerability</div>
+          <div class="chapter-sub">Deepfakes · NCII · Sextortion · Chatbots · Generative Audio · Children, Women, and Cross-Population Harms</div>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-purpose">This chapter examines generative AI not as a neutral tool but as a category of technology that produces specific, documented harms against real people - with particular focus on how those harms concentrate in women, children and teenagers, and other vulnerable populations. It covers how AI-generated imagery, video, audio, and conversational agents are being weaponized for non-consensual sexual exploitation, sextortion, grooming, fraud, and psychological harm. It also examines the structural conditions - legal gaps, platform failures, technological accessibility - that allow these harms to scale.</div>
+        <div class="chapter-topics">
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Deepfakes and synthetic video:</strong> How AI-generated video and image manipulation works and the documented categories of harm it has produced: impersonation, fabricated evidence, political disinformation, financial fraud, and the weaponization of synthetic media against private individuals.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Non-consensual intimate imagery (NCII) and AI-generated sexual content:</strong> Women are disproportionately targeted. This section examines psychological, professional, and social harms to victims; the challenge of getting content removed; and the gap between legal frameworks and the speed of the technology.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>AI-facilitated sextortion - a cross-population threat:</strong> AI tools can generate convincing synthetic sexual imagery from ordinary photos, lowering the barrier to extortion dramatically. Men and boys are increasingly represented among victims. This section examines why the synthetic nature of imagery does not reduce the harm - legally, emotionally, or socially.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Adolescents and AI-enabled exploitation:</strong> Scammers building fake personas, fabricating imagery from public photos, and using it as extortion leverage even when no real images were ever shared. Includes the documented psychological impact - including cases of suicide - and the argument that AI-generated imagery carries the same harm weight as real imagery for an adolescent on the receiving end of a threat.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Chatbots and conversational AI as vectors of harm:</strong> Romance fraud, social engineering, AI-powered grooming, and the specific risk for elderly users who may form genuine emotional attachments to chatbot personas they believe to be human.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Generative audio and voice cloning:</strong> AI impersonation of trusted individuals - family members, employers - in fraud schemes. The psychological dimension of why voice is so trusted and why its synthetic replication is so dangerous.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>AI-assisted phishing at scale:</strong> The collapse of traditional detection heuristics (spelling errors, suspicious grammar) now that LLMs can generate highly personalized, convincing phishing content at volume.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Disability, cognitive decline, and AI-enhanced exploitation:</strong> How specific disability categories intersect with the generative AI threat landscape. People experiencing cognitive decline are precisely the target that AI-enhanced romance scams and impersonation fraud are optimized to exploit - and standard protective guidance loses traction when the person cannot reliably detect the threat.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Trust collapse and epistemic harm:</strong> When any image, video, or audio can plausibly be fabricated, the evidentiary and social value of documentation is undermined. Victims asserting imagery is fabricated may not be believed. This section examines what that means for justice and accountability.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Legal and regulatory landscape:</strong> State-level NCII legislation, STOP CSAM Act provisions, COPPA protections, and where significant gaps persist. The difficulty of holding AI tool providers liable for enabled harms.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Design, platform, and policy implications:</strong> AI watermarking, platform takedown obligations, age verification, detection tool accessibility, and media literacy as a public health and child safety imperative.</div>
+        </div>
+        <details class="chapter-status-details"><summary>Research Status</summary><span class="chapter-status-text">Proposed, topic outline in development</span></details>
+      </div>
+    </div>
+
+    <!-- CH 4 -->
+
+    <!-- CH 4 -->
+    <div class="chapter-card">
+      <div class="chapter-hdr">
+        <div class="chapter-num">4</div>
+        <div class="chapter-meta">
+          <div class="chapter-title">Ethics, Policy, and Law at the Intersection of HCI, AI, and Cybersecurity</div>
+          <div class="chapter-sub">Legal Frameworks · Ethical Dimensions · Policy Landscape · Where the Three Disciplines Converge</div>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-purpose">This chapter examines the legal, ethical, and policy frameworks that govern the intersection of human-computer interaction, artificial intelligence, and cybersecurity. It does not treat these as three separate bodies of law operating in isolation, but as an interconnected regulatory landscape that organizations, technologists, and policymakers must navigate together. Just as HCI, AI, and cybersecurity cannot be separated as disciplines, the legal and ethical obligations surrounding them cannot be fully understood in isolation either. This chapter is not written as a legal treatise - it is written for technology professionals, organizations, and practitioners who need to understand the legal and ethical environment they operate in, and why that understanding is inseparable from human-centered design, AI, and cybersecurity practice. The chapter also examines where current law falls short of the protection it promises, where ethics must fill the gaps that legislation has not yet closed, and what the rapidly evolving policy environment means for organizations operating in a landscape where the rules are still being written.</div>
+        <div class="chapter-topics">
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>The ethics of human-centered design:</strong> Design is never neutral. Every interface decision, every default setting, every piece of consent language reflects a set of values and assumptions about who the user is and what they deserve to understand. This section examines the ethical obligations of HCI practitioners: designing for accessibility and inclusion, avoiding dark patterns and manipulative design, ensuring meaningful consent rather than performative compliance, and accounting for the full range of users rather than the assumed average. It also examines the intersection of design ethics with power, asking who gets to decide what constitutes good design and whose experience is centered in that judgment.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>HCI and the law, accessibility, privacy, and consent:</strong> The legal framework governing human-computer interaction includes accessibility law (ADA, Section 508, EU Web Accessibility Directive), privacy and data protection regulation (GDPR, CCPA, COPPA), and consumer protection requirements around disclosure and consent. This section examines how these frameworks shape what organizations must build, where they consistently fall short of genuine protection, and the gap between legal compliance and human-centered design. It also examines GDPR's right to explanation for automated decisions as a legal recognition that interface design has ethical stakes, and what that means for AI-powered systems specifically.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>AI ethics, the emerging regulatory landscape, and what organizations must know:</strong> The ethics of artificial intelligence has moved from academic discourse to regulatory mandate at unprecedented speed. This section examines the emerging AI policy landscape: the EU AI Act and its risk-tiered approach to AI regulation, US executive orders and agency guidance on AI governance, the NIST AI Risk Management Framework, and sector-specific AI rules emerging in healthcare, financial services, and employment. It also examines the foundational ethical principles that run through these frameworks, including fairness, accountability, transparency, and explainability, and asks what those principles require of organizations that are building or deploying AI-powered technology in practice rather than in theory.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>AI bias, discrimination, and legal liability:</strong> When AI systems produce biased outputs that disadvantage protected classes in hiring, lending, healthcare, or housing, they may create legal liability under existing civil rights and anti-discrimination law even before AI-specific regulation applies. This section examines the legal and ethical dimensions of algorithmic bias: the documented cases where AI systems have produced discriminatory outcomes, the legal frameworks that may apply, the challenge of proving discrimination when the decision-making process is opaque, and what organizations must do to assess and address bias in the AI systems they build and deploy.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Cybersecurity law, policy, and the human dimension:</strong> The cybersecurity legal landscape is broad and fragmented: HIPAA governs healthcare data, GLBA governs financial institutions, GDPR and CCPA govern consumer data broadly, the SEC has issued cybersecurity disclosure rules for public companies, and critical infrastructure is governed by sector-specific frameworks. NIST's Cybersecurity Framework provides voluntary guidance that has become a de facto standard. This section examines how these frameworks account for, or fail to account for, the human dimension of cybersecurity: the interface design, user behavior, and organizational decision-making that determine whether technical security controls actually protect real people.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>The ethics of cybersecurity in an AI-powered threat landscape:</strong> AI has changed the cybersecurity ethics landscape in two ways simultaneously. On the offense side, AI enables attacks of greater sophistication, scale, and psychological precision than were previously possible, raising ethical questions about the responsibility of AI tool developers for enabled harms. On the defense side, AI-powered security systems make autonomous decisions that affect people, including decisions that may lock users out of accounts, flag transactions, or generate alerts that shape security outcomes without meaningful human review. This section examines the ethical obligations of organizations and security professionals operating in this landscape, including the duty of transparency about AI-driven decisions and the obligation to design security systems that do not disproportionately harm vulnerable users.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Where HCI, AI, and cybersecurity law intersect and where they conflict:</strong> The three legal landscapes do not always align. Accessibility requirements may create usability features that introduce security vulnerabilities. AI transparency requirements may conflict with proprietary model protections. Security controls mandated by one framework may create data processing activities governed by another. This section maps the points of intersection and tension, and examines how organizations can navigate a regulatory environment where the obligations of HCI, AI, and cybersecurity do not always point in the same direction.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>The gap between compliance and genuine protection:</strong> Legal compliance is a floor, not a ceiling. A system can be technically compliant with accessibility law and still be functionally inaccessible to real users. A system can satisfy GDPR consent requirements and still fail to give users meaningful understanding of what they are agreeing to. A cybersecurity program can check every required box and still leave vulnerable populations exposed. This section examines why the gap between legal compliance and genuine human protection persists, and what it demands of organizations that treat compliance as a minimum obligation rather than a design goal.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Ethics when law has not caught up:</strong> The pace of AI development has outrun the pace of legislation. There are domains where organizations face genuine ethical obligations that no current law enforces, including the use of AI in contexts where vulnerable populations are at particular risk, the deployment of AI systems whose failure modes are not yet well understood, and the collection of behavioral data at scales that existing privacy frameworks were not designed to govern. This section examines what ethical responsibility looks like in a regulatory gap, drawing on existing ethics frameworks and the research literature to identify what responsible practice requires in the absence of clear legal mandate.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>The evolving policy landscape and its implications for this research:</strong> The policy environment surrounding HCI, AI, and cybersecurity is changing faster than at any prior point in the history of technology regulation. This section surveys the active legislative and regulatory landscape, noting where frameworks are being developed, where they are being contested, and what the trajectory of change means for organizations trying to build responsibly for the long term. It also returns to the dissertation's central argument: that organizations navigating this landscape need an integrated understanding of HCI, AI, and cybersecurity ethics and law, not three separate legal checklists, because the problems they face and the obligations they carry do not respect those divisions.</div>
+
+        </div>
+        <details class="chapter-status-details"><summary>Research Status</summary><span class="chapter-status-text">Proposed, topic outline in development</span></details>
+      </div>
+    </div>
+
+    <!-- CH 5 -->
+
+    <!-- CH 5 -->
+    <div class="chapter-card">
+      <div class="chapter-hdr">
+        <div class="chapter-num">5</div>
+        <div class="chapter-meta">
+          <div class="chapter-title">Disability, AI, and Cybersecurity: Access, Exploitation, and the Path Toward Inclusive Security</div>
+          <div class="chapter-sub">Accessibility as Attack Surface · Inaccessible Security Systems · AI as Tool and Threat · Designing for Inclusion</div>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-purpose">People with disabilities sit at a uniquely acute intersection of HCI, AI, and cybersecurity. They depend on assistive technology to interact with the digital world, yet that same technology can introduce security vulnerabilities. They face cybersecurity systems designed without them in mind, yet the consequences of those exclusions are not merely inconvenient - they are materially dangerous. And AI, which holds genuine promise as an accessibility tool, simultaneously introduces new forms of harm and exclusion for this population. This chapter examines all three dimensions: how the assistive and adaptive technologies that people with disabilities rely on can become vectors for exploitation; how cybersecurity systems fail people with disabilities through inaccessible design; and how AI is both expanding access and amplifying risk for this population. Rather than treating disability as a static category, this chapter examines it as a spectrum of intersecting differences, each carrying distinct implications, and draws on existing research to ask what genuinely inclusive, secure, and usable technology design requires.</div>
+        <div class="chapter-topics">
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Accessibility tools as attack surface:</strong> The assistive technologies that enable people with disabilities to use digital systems can themselves become vectors for exploitation. Screen readers that announce content aloud may expose sensitive information in shared environments. Voice control interfaces that accept spoken commands can be hijacked by audio attacks or expose credentials when used in public. Eye-tracking and switch-access devices that monitor physical movement can reveal patterns of behavior that compromise privacy. Predictive and augmentative communication tools that store vocabulary and frequently used phrases may hold sensitive personal information. This section examines the specific ways that accessibility accommodations, precisely because they modify the standard human-technology interface, can open pathways for attack that standard cybersecurity guidance was never designed to address. The people who depend most on these tools are often the least able to identify or recover from the exploitation they enable.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Inaccessible cybersecurity systems and the harm of exclusion:</strong> Cybersecurity mechanisms are among the least accessible components of digital systems. CAPTCHA challenges rely on visual or audio perception that may be unavailable to users with sensory disabilities. Multi-factor authentication flows assume physical dexterity, functional vision, and cognitive capacity to process time-limited codes under pressure. Security warnings are written in technical language that presupposes literacy and comprehension levels that many users, including those with cognitive disabilities, do not have. Password complexity requirements generate cognitive load that disproportionately burdens users with memory impairments. When cybersecurity systems are inaccessible, the harm is not merely that disabled users are inconvenienced. The harm is that they face a forced choice: accept workarounds that reduce security, rely on assistance that compromises privacy, or disengage from systems they need. This section examines documented patterns of inaccessible security design, the populations most affected, and the research on what genuinely accessible security design requires as distinct from merely compliant design.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>AI as an accessibility tool: genuine gains and their limits:</strong> Artificial intelligence has produced some of the most significant accessibility advances in decades. AI-powered captioning and transcription have expanded communication access for users who are deaf or hard of hearing. Image description tools have given blind and low-vision users meaningful access to visual content. Predictive text and AI writing assistants have reduced the cognitive and motor burden of text-based communication. Voice-to-text and text-to-voice conversion have enabled fuller participation in digital environments for users with motor and communication disabilities. These are real gains and this section examines them honestly. It also examines their limits: AI accessibility tools that fail in noisy environments, that generate inaccurate descriptions of complex or culturally specific imagery, that are not built into security-critical interfaces where they would matter most, and that serve as accessibility layers over fundamentally inaccessible systems rather than genuinely inclusive design from the ground up.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>AI as harm amplifier for people with disabilities:</strong> The same AI capabilities that open access for some users with disabilities introduce new forms of harm and exclusion for others. Facial recognition systems have documented accuracy disparities for people with facial differences, dark skin tones, and atypical facial musculature. Voice authentication systems exclude users with speech disabilities, progressive neurological conditions, or atypical vocal patterns. Automated content moderation trained on neurotypical communication norms may disproportionately flag or remove communication from users with autism spectrum conditions, cognitive disabilities, or AAC device users whose output differs in structure from expected patterns. AI systems used in hiring, benefits determination, and healthcare risk scoring have shown bias patterns that compound existing disadvantage for people with disabilities. This section examines how AI systems, when built without representative training data and without human-centered evaluation of their outcomes across disability categories, can systematically exclude and harm the populations they were never designed to serve.</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>The compounding intersection: cognitive decline, AI-enhanced threats, and the limits of protective guidance:</strong> For people experiencing progressive cognitive conditions, including Alzheimer's disease, other dementias, and acquired brain injury, the intersection of disability, AI, and cybersecurity produces a particularly acute and underexamined risk profile. These individuals may have well-established digital habits and social networks formed before cognitive decline, making them active users of platforms and services that now present risks they are less equipped to detect. AI-enhanced social engineering, voice cloning, and chatbot-based fraud are optimized for precisely the psychological and cognitive vulnerabilities that cognitive decline produces: trust in familiar voices, difficulty detecting inconsistency over time, susceptibility to emotional manipulation. This section examines what the existing research tells us about this intersection and asks a harder question that the literature has not fully addressed: what does protective guidance look like for someone whose capacity to act on standard advice is itself compromised, and what obligations does that place on the organizations whose systems they are using?</div>
+
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Toward genuinely inclusive security design:</strong> This section draws on the chapter's analysis to examine what genuinely inclusive, secure, and usable design requires as distinct from accessible design as a compliance target. It covers: principles for building security mechanisms that do not force disabled users to choose between access and protection; the role of co-design with disability communities in security product development; standards and frameworks for accessibility in security-critical interfaces; AI audit and evaluation requirements that include disability representation; and the organizational accountability structures that ensure accessibility and security are not treated as competing priorities. The argument this section makes is consistent with the dissertation's broader framing: designing security and AI systems for the full range of human difference does not produce a weaker or more compromised product. It produces a more robust one, because the design processes that surface disability-related failure modes also surface failure modes that affect everyone.</div>
+
+        </div>
+        <details class="chapter-status-details"><summary>Research Status</summary><span class="chapter-status-text">Proposed, topic outline in development</span></details>
+      </div>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-hdr">
+        <div class="chapter-num">6</div>
+        <div class="chapter-meta">
+          <div class="chapter-title">Methodology: Research Design for Human-Centered AI Study</div>
+          <div class="chapter-sub">Research Approach · Data Collection · Analysis Framework</div>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-purpose">This chapter outlines how the research will be conducted. The methodology draws from multiple traditions - qualitative methods (interviews, usability studies, focus groups), quantitative measurement (surveys, behavioral data), and design-based approaches (framework development, prototype evaluation). The methodology must be grounded in human-centered research principles and appropriate for the vulnerable populations involved.</div>
+        <div class="chapter-topics">
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Research paradigm:</strong> Applied, mixed-methods, interdisciplinary - drawing from HCI, behavioral psychology, and cybersecurity research traditions.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Participant populations:</strong> Identifying and ethically recruiting participants from vulnerable population groups, with particular attention to informed consent processes for minors, elderly participants, and individuals with disabilities.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Data collection methods:</strong> Structured interviews, usability observation, survey instruments measuring trust and risk perception, and analysis of existing AI system interactions.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Ethical considerations:</strong> IRB requirements, data privacy, power dynamics in research with vulnerable populations, and responsible AI use in the research process itself.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Expected outputs:</strong> Applied frameworks, design guidelines, or policy recommendations that practitioners can implement - consistent with the D.Tech.'s professional doctorate emphasis.</div>
+        </div>
+        <details class="chapter-status-details"><summary>Research Status</summary><span class="chapter-status-text">Proposed, pending formal research design</span></details>
+      </div>
+    </div>
+
+    <div class="chapter-card">
+      <div class="chapter-hdr">
+        <div class="chapter-num">7</div>
+        <div class="chapter-meta">
+          <div class="chapter-title">Findings: How People Actually Experience AI and Cybersecurity Systems</div>
+          <div class="chapter-sub">Research Results · Patterns · Population-Specific Observations</div>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-purpose">This chapter presents what the research found - the patterns, behaviors, and experiences documented across the study populations. It is organized around the core research questions and includes population-specific findings, with particular attention to how experiences differ across vulnerable groups including children and teenagers, elderly users, and those with disabilities or mental health conditions.</div>
+        <div class="chapter-topics">
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Trust formation and breakdown:</strong> How participants formed, maintained, and lost trust in AI systems - and what design factors drove those shifts.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Vulnerable population experiences:</strong> What was distinctly different about how children and teens, elderly users, users with disabilities, and others in the focus populations experienced the same systems.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Security behavior and UX:</strong> What the data shows about how interface design shapes whether people make safe or unsafe decisions - and how AI changes that dynamic.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>AI comprehension and misconceptions:</strong> What participants understood - and misunderstood - about how AI worked, what it was doing, and who was responsible for its outputs.</div>
+        </div>
+        <details class="chapter-status-details"><summary>Research Status</summary><span class="chapter-status-text">Proposed, content pending research findings</span></details>
+      </div>
+    </div>
+
+    <!-- CH 6 -->
+    <div class="chapter-card">
+      <div class="chapter-hdr">
+        <div class="chapter-num">8</div>
+        <div class="chapter-meta">
+          <div class="chapter-title">Implementing AI and Cybersecurity in the Real World: A Human-Centered Framework for Business, Government, and NGOs</div>
+          <div class="chapter-sub">Organizational Implementation · HCI as Operational Lens · Legal &amp; Ethical Frameworks · Risk Across Sectors · Applied D.Tech. Contribution</div>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-purpose">This chapter is the applied core of the dissertation - the place where the research meets practice. Where earlier chapters establish what is known and what the research found, this chapter addresses the real-world industry gap the dissertation exists to close: organizations across sectors are building and deploying AI-powered technology and cybersecurity systems without a sufficient human-centered framework to guide those decisions. Human-Computer Interaction is the operating lens throughout - and the output is practical guidance grounded in existing knowledge, not a new theory invented from scratch.</div>
+        <div class="chapter-topics">
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Where organizational implementation breaks down:</strong> The standard implementation lifecycle - procurement, deployment, training, monitoring - and where human-centered considerations are systematically absent: requirements gathering that excludes end users, accessibility reviews that happen after design, security UX as afterthought, and vulnerable population needs never assessed at all.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>The private sector:</strong> FinTech, healthcare, insurance, retail, legal services. Competitive pressures driving speed-over-safety decisions. Compliance treated as a ceiling rather than a floor. The specific challenge of customer-facing AI products whose user populations include vulnerable groups the organization has never studied.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Government agencies and public sector:</strong> Federal, state, and local agencies serving constituencies with high concentrations of vulnerable populations. Procurement barriers to human-centered design. Section 508, ADA Title II, emerging AI governance frameworks - and where they fall short.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Non-governmental organizations:</strong> Mission-driven tech implementation under resource constraints. How NGOs adopt donated or discounted tools and what risks that creates for the people they directly serve. Ethical obligations when deploying AI in humanitarian response, crisis counseling, and social services.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Legal and ethical frameworks:</strong> ADA, CCPA, COPPA, HIPAA, GDPR, EU AI Act, FTC guidelines. The gap between what current law requires and what genuine human-centered protection demands. Why compliance is necessary but deeply insufficient.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Risk management with a human-centered lens:</strong> Integrating human-centered risk assessment into NIST AI RMF, ISO/IEC 42001, and NIST CSF - identifying not just technical vulnerabilities but human ones: populations who cannot safely use a given system, threat vectors that exploit psychology rather than software, organizational decisions that create human risk even when technical security is strong.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Toward a human-centered AI implementation framework:</strong> Drawing on existing bodies of knowledge across HCI, cybersecurity, accessibility, and organizational management, this section synthesizes what the applied research reveals into practical guidance organizations can use. Rather than proposing an entirely new theory, the goal is to bring together what is already known in a way that is actionable for the specific challenge of human-centered AI and cybersecurity implementation - organized around the implementation lifecycle and applicable across sectors.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>HCI as an organizational implementation discipline:</strong> What it looks like to treat HCI operationally rather than academically - embedded in requirements gathering, interface design, usability testing with actual populations, and post-deployment monitoring that tracks human outcomes alongside technical performance. Who carries HCI responsibility, and what happens when no one does.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>HCI inside the cybersecurity sector - the full professional workforce:</strong> The cybersecurity professional as a user whose own tools are often poorly designed. Covers the full workforce - analysts, penetration testers, threat hunters, incident responders, GRC professionals, security engineers, DevSecOps practitioners, CISOs. Alert fatigue, cognitive load, role-specific tool design, visualization and decision support, proactive vs. reactive design, workforce burnout. Organizational tool-building obligations and the integration/interoperability layer - context lost at the handoff between tools is its own security failure mode. Good design in professional security tools is itself a security control.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Technology and cybersecurity professionals as AI adopters and builders:</strong> Cybersecurity professionals exist across every sector - not only technology. All technology professionals (developers, data scientists, cloud architects, product managers, IT professionals, consultants) are actively adopting and building AI. The risks: over-reliance on AI outputs under time pressure, data exposure through external AI tools, hallucinations entering reports and risk assessments, and the adversarial mirror problem - the same AI capabilities improving their efficiency are improving adversaries' capabilities simultaneously. Cybersecurity teams are themselves organizations implementing AI and are subject to the same human-centered imperative they advocate for clients. The implementation failures of technology professionals and cybersecurity professionals are connected and propagate across each other. The framework applies to everyone in the chain - including the professionals whose job it is to secure everyone else.</div>
+        </div>
+        <details class="chapter-status-details"><summary>Research Status</summary><span class="chapter-status-text">Proposed, topic outline in development</span></details>
+      </div>
+    </div>
+
+    <!-- CH 7 -->
+    <div class="chapter-card">
+      <div class="chapter-hdr">
+        <div class="chapter-num">9</div>
+        <div class="chapter-meta">
+          <div class="chapter-title">Discussion: Implications for Design, Policy, and Practice</div>
+          <div class="chapter-sub">What It Means · Recommendations · Limitations · Future Directions</div>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-purpose">This chapter interprets what the findings mean for the people and organizations responsible for building, deploying, and regulating AI systems. It bridges research and practice - translating empirical insights into actionable frameworks for designers, policymakers, practitioners, and organizations working with vulnerable populations. It also honestly addresses the study's limitations and identifies directions for future research.</div>
+        <div class="chapter-topics">
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Design implications:</strong> What the findings mean for how AI-powered technology and cybersecurity systems should be designed differently - particularly for and with vulnerable populations including children and teens.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Policy implications:</strong> What the findings suggest about gaps in existing regulation (ADA, GDPR, CCPA, COPPA, emerging AI legislation) and where new frameworks are needed.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Organizational practice:</strong> Guidance for businesses and government entities on how to implement AI-powered systems in ways that are equitable, transparent, and protective of vulnerable users.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Limitations and future research:</strong> Honest accounting of what this study could not address, what would need to be studied next, and where the field most urgently needs additional scholarship.</div>
+        </div>
+        <details class="chapter-status-details"><summary>Research Status</summary><span class="chapter-status-text">Proposed, content pending research findings</span></details>
+      </div>
+    </div>
+
+    <!-- CH 8 -->
+    <div class="chapter-card">
+      <div class="chapter-hdr">
+        <div class="chapter-num">10</div>
+        <div class="chapter-meta">
+          <div class="chapter-title">Conclusion: Toward Human-Centered AI and Cybersecurity</div>
+          <div class="chapter-sub">Contribution to Knowledge · Closing Argument · Call to Action</div>
+        </div>
+      </div>
+      <div class="chapter-body">
+        <div class="chapter-purpose">This chapter closes the dissertation by clearly stating what it has applied, synthesized, and added to practice - and why that matters for the organizations, professionals, and populations at the center of this work. It ties together the research questions, findings, and implications into a coherent argument for why human-centered design must be at the center of how AI and cybersecurity systems are built and governed, grounded in existing scholarship and directed toward practical application.</div>
+        <div class="chapter-topics">
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>Applied contribution:</strong> What this dissertation applies, synthesizes, and advances in practice. Consistent with the Purdue D.Tech. program's focus on addressing real-world industry gaps through applied research, this work draws on existing scholarship across AI, human-computer interaction, cybersecurity, accessibility, and organizational implementation to produce actionable guidance for technology professionals, organizations, and policymakers. The contribution is not a new theory - it is a more complete, applied understanding of a real and underexamined problem, organized in a way that practitioners can use.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>The core argument:</strong> AI and cybersecurity cannot be built well without centering the people who use them - and the people who are most at risk when those systems fail. That is not a design preference; it is an ethical obligation and a practical necessity.</div>
+          <div class="chapter-topic"><div class="chapter-topic-dot"></div><strong>A call to action:</strong> The systems being built today are shaping how billions of people experience technology, security, and AI. The time to build human-centered design in is now - before these systems become so embedded that changing them is impractical.
+            <div class="cta-grid">
+              <div class="cta-item"><div class="cta-label">Designers &amp; Technologists</div><div class="cta-text">Include vulnerable populations in requirements, research, and testing from the start - not as an edge case, not in a later release.</div></div>
+              <div class="cta-item"><div class="cta-label">Businesses &amp; Organizations</div><div class="cta-text">Established enterprises, startups, and AI-native companies alike: human-centered AI and cybersecurity is the foundation of trustworthy technology, not a feature layer. This research goes deeper than most organizations have yet examined. Use it.</div></div>
+              <div class="cta-item"><div class="cta-label">NGOs</div><div class="cta-text">The obligation to implement AI thoughtfully is highest where the people you serve have the least power to recover from harm. This research provides a framework for better decisions, even under resource constraints.</div></div>
+              <div class="cta-item"><div class="cta-label">Government Agencies</div><div class="cta-text">You serve the populations most concentrated in every vulnerable category this dissertation addresses. Human-centered implementation is an obligation to those people - build it in before deployment, not after harm is documented.</div></div>
+              <div class="cta-item"><div class="cta-label">Policymakers &amp; Researchers</div><div class="cta-text">Close the gap between what law requires and what genuine protection demands. Build the evidence base. Fund the research. The field needs both.</div></div>
+            </div>
+            <div style="margin-top:.9rem;font-size:.82rem;color:var(--text-sub);line-height:1.7;font-style:italic;">The people most affected by how these systems are designed must be visible in the design process. The scale of each organization differs. The obligation does not.</div>
+          </div>
+        </div>
+        <details class="chapter-status-details"><summary>Research Status</summary><span class="chapter-status-text">Proposed, content pending research findings</span></details>
+      </div>
+    </div>
+
+  </div>
+    </div><!-- end chapters-wrapper -->
+
+</div>
+
+<div class="footer"><strong>Purdue</strong> - Polytechnic Institute - Doctor of Technology - Interdisciplinary Concentration</div>
+
+<script>
+function switchTab(id) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+</script>
+
+
+<div id="overlap-modal" onclick="if(event.target===this)closeOverlapModal()">
+  <div id="overlap-modal-box">
+    <button id="overlap-modal-close" onclick="closeOverlapModal()">x</button>
+    <div id="overlap-modal-title"></div>
+    <div id="overlap-modal-body"></div>
+  </div>
+</div>
+
+</body>
+</html>
